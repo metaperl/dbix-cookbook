@@ -1,0 +1,14 @@
+schema/lib/*
+blib*
+Makefile
+Makefile.old
+Build
+_build*
+pm_to_blib*
+*.tar.gz
+.lwpcookies
+DBIx-Shootout-*
+cover_db
+
+schema.sqlite3
+*~
