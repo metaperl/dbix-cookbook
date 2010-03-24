@@ -8,12 +8,12 @@ use strict;
 use warnings;
 
 
-my $dump_dir="$ENV{DBIX_COOK}/schema/lib/DBIC";
+my $dump_dir="$ENV{DBIX_COOK}/lib";
 my $c = DBIx::Cookbook::DBH::connect_data;
 
 make_schema_at 
   ( 
-   'Sakila',
+   'DBIx::Cookbook::DBIC::Sakila',
    {
     debug => 1, 
     dump_directory => $dump_dir,

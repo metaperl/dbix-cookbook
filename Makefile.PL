@@ -10,6 +10,7 @@ author_tests('xt');
 build_requires 'Test::More';
 
 requires 'DBI';
+reqiures 'MooseX::App::Cmd';
 
 auto_install;
 

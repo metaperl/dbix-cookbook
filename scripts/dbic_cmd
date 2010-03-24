@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+
+
+use DBIx::Cookbook::DBIC;
+my $app = DBIx::Cookbook::DBIC;
+
+$app->run;

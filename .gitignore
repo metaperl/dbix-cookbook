@@ -11,4 +11,11 @@ DBIx-Shootout-*
 cover_db
 
 schema.sqlite3
+
+lib/DBIx/Cookbook/DBIC/Sakila/*
+
+
+# Emacs backup files
 *~
+.#*
+\#*#
