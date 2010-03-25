@@ -4,7 +4,7 @@ extends qw(MooseX::App::Cmd::Command);
 
 use Data::Dump;
 
-use DBIx::Cookbook::DBIC::CustomSQL;
+#use DBIx::Cookbook::DBIC::CustomSQL;
 
 sub execute {
   my ($self, $opt, $args) = @_;
