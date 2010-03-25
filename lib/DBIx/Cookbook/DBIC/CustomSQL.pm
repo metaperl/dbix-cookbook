@@ -5,6 +5,8 @@ use warnings;
 
 use base 'DBIx::Class::Core';
 
+our @ISA; die join " ", @ISA;
+
 __PACKAGE__->table_class('DBIx::Class::ResultSource::View');
 
 __PACKAGE__->result_source_instance->is_virtual(1);
