@@ -1,4 +1,4 @@
-package Sakila::DBIx::Class::Command::fetch_first;
+package DBIx::Cookbook::DBIC::Command::fetch_first;
 use Moose;
 extends qw(MooseX::App::Cmd::Command);
 

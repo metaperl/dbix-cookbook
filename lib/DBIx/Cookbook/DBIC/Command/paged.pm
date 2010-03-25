@@ -1,11 +1,27 @@
-package Sakila::DBIx::Class::Command::paged;
+package DBIx::Cookbook::DBIC::Command::paged;
 use Moose;
 extends qw(MooseX::App::Cmd::Command);
 
 use Data::Dump;
 
+has 'rows' => (
+	       traits => [qw(Getopt)],
+	       isa => "Int",
+	       is  => "rw",
+	       documentation => "number of rows per page"
+	      );
+
+has 'page' => (
+	       traits => [qw(Getopt)],
+	       isa => "Int",
+	       is  => "rw",
+	       documentation => "page to start output from"
+	      );
+
+
 sub execute {
   my ($self, $opt, $args) = @_;
+
 
   $opt->{rows} ||= 10;
 
@@ -35,7 +51,7 @@ sub execute {
   if (my $next_page = $pager->next_page) {
     $opt->{page} = $next_page;
     $self->execute($opt);
-  } 
+  }
 
 }
 

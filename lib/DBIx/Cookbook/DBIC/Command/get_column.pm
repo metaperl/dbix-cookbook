@@ -1,4 +1,4 @@
-package Sakila::DBIx::Class::Command::get_column;
+package DBIx::Cookbook::DBIC::Command::get_column;
 use Moose;
 extends qw(MooseX::App::Cmd::Command);
 
