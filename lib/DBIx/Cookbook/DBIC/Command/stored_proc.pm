@@ -4,6 +4,31 @@ extends qw(MooseX::App::Cmd::Command);
 
 use Data::Dump;
 
+
+# http://www.mail-archive.com/dbix-class@lists.scsys.co.uk/msg00706.html
+# This URL shows that it is probably better to simply use DBI for that
+
+# Otherwise dbh_do is possible as well
+# http://search.cpan.org/~ribasushi/DBIx-Class-0.08120/lib/DBIx/Class/Storage/DBI.pm#dbh_do
+
+=for future_record
+
+[13:34] <@mst> metaperl_: right
+[13:34] <@mst> metaperl_: and mysql's stored procs are a pile of shit
+[13:34] <@mst> I'm sorry
+[13:34] <@mst> I mistakenly assumed you were doing something stupid
+[13:34] <@mst> in this case, it appears there is no non-stupid thing to do
+[13:35] <@mst> well, except not use stored procedures on mysql at all
+[13:35] <@mst> if you need stored procedures, get yourself a proper database
+[13:35] <metaperl_> mst so what is problematic about MySQL's stored procs?
+[13:35] <@mst> erm, the API is RETARDED
+[13:35] <@mst> you're having to CALL and SELECT as two separate statements
+[13:36] <@mst> also, they're not particularly stable and fail at a lot of edge cases
+[13:36] <@mst> but really, if you're needing stored procedures at all
+[13:36] <@mst> you have exceeded the capabilities of MySQL
+
+=cut
+
 =for comment
 
 It is undesireable for manually developed code to reside in the same place as
