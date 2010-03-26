@@ -19,7 +19,7 @@ sub execute {
     my $where = { last_name => { LIKE => 'A%' } } ;
     my $attr = {
 		columns =>  [ qw(last_name) ],
-		distinct => 1  # also: { group_by => last_name }
+		distinct => 1  # or: { group_by => last_name }
 	       };
 
     $self->app->schema->resultset('Actor')->search($where, $attr);

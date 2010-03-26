@@ -1,4 +1,4 @@
-package DBIx::Cookbook::DBIC::OverdueDVDs;
+package DBIx::Cookbook::DBIC::CustomResult::FilmInStock;
 
 use strict;
 use warnings;
@@ -8,6 +8,8 @@ use base 'DBIx::Class::Core';
 our @ISA; die join " ", @ISA;
 
 __PACKAGE__->table_class('DBIx::Class::ResultSource::View');
+
+__PACKAGE__->table('FilmInStock');
 
 __PACKAGE__->result_source_instance->is_virtual(1);
 
