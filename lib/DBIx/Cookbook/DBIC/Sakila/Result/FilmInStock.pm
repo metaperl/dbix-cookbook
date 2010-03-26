@@ -1,4 +1,4 @@
-package DBIx::Cookbook::DBIC::CustomResult::FilmInStock;
+package DBIx::Cookbook::DBIC::Sakila::Result::FilmInStock;
 
 use strict;
 use warnings;
