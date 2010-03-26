@@ -15,6 +15,8 @@ sub BUILD {
 
   my $schema = DBIx::Cookbook::DBIC::Sakila->connect(  sub { DBIx::Cookbook::DBH::dbh } );
 
+  #### ->load_namespaces for DBIx/Cookbook/DBIC/CustomResult ???
+
   $self->schema($schema);
 }
 
