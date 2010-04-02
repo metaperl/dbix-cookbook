@@ -8,7 +8,7 @@ our $VERSION = '0.01';
 
 =head1 NAME
 
-DBIx::Cookbook - executable cookbook code for DBI ORMs
+DBIx::Cookbook - executable cookbook code for DBI-based ORMs
 
 =head1 VERSION
 
@@ -19,16 +19,39 @@ Version 0.01
 
 =head1 SYNOPSIS
 
-  dbicook database install
+   dbic_cmd distinct_count
 
-  dbicook dbic loader 
-  dbicook dbic fetch_all
+=head1 DESCRIPTION
 
-  dbicook database reset
+L<DBIx::Cookbook> is a working cookbook of code for L<DBI>-based ORMs. 
+It is based on the Sakila database schema 
+(L<http://dev.mysql.com/doc/sakila/en/sakila.html>). While it currently only
+contains code for L<DBIx::Class>, all ORMs are encouraged to contribute code 
+so that comparisons can be made between various ORMs for the same task.
 
-  dbicook skinny loader
-  dbicook skinny fetch_all
+=head1 INSTALLATION
 
+=head2 Install the Sakila database into MySQL
+
+=head2 Download and Configure DBIx::Cookbook
+
+=head3 Configure DBIx::Cookbook::DBH
+
+=head3 Connect your ORM(s) to the Sakila database via DBIx::Cookbook::DBH
+
+The C<scripts> directory of the distribution contains F<dbic_loader>, a script
+which runs L<DBIx::Class::Schema::Loader> on the Sakila instance to build the
+schema classes.
+
+=head2 Run the Cookbook examples
+
+  dbic_cmd complex_where
+  dbic_cmd paged
+  dbic_cmd subquery
+ 
+etc.
+
+=head1 EXTENSION (with another ORM)
 
 
 
@@ -36,15 +59,10 @@ Version 0.01
 
 Terrence Brannon, C<< <metaperl at gmail.com> >>
 
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-dbix-cookbook at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=DBIx-Cookbook>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-
 
 =head1 SUPPORT
+
+irc://irc.perl.org/#dbix-class - I can be found as 'metaperl' here
 
 You can find documentation for this module with the perldoc command.
 
@@ -55,7 +73,7 @@ You can also look for information at:
 
 =over 4
 
-=item * RT: CPAN's request tracker
+=item * RT: CPAN's request tracker / bug report system
 
 L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=DBIx-Cookbook>
 

@@ -2,11 +2,19 @@ package DBIx::Cookbook::DBIC::Command::db_func;
 use Moose;
 extends qw(MooseX::App::Cmd::Command);
 
+=for NOTE
+
+  the as attribute has absolutely *NOTHING* to do with 
+  the SQL syntax  SELECT foo AS bar
+
+  it is used to specify how the columns will be accessed
+
+=cut
 
 sub execute {
   my ($self, $opt, $args) = @_;
 
-
+  
 
   my $rs = do {
 
