@@ -32,7 +32,6 @@ WHERE film_id
     use Data::Dumper;
     my %data = $row->get_columns;
     warn Dumper(\%data);
-    
   }
 }
 
