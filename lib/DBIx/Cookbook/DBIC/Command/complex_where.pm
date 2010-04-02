@@ -2,10 +2,13 @@ package DBIx::Cookbook::DBIC::Command::complex_where;
 use Moose;
 extends qw(MooseX::App::Cmd::Command);
 
-use Data::Dump;
+use Data::Dumper;
 
 sub execute {
   my ($self, $opt, $args) = @_;
+
+
+ $self->app->schema->storage->debug(1);
 
   my $rs = do {
 
@@ -22,12 +25,15 @@ sub execute {
 
     my $attr = { order_by => 'title' };
 
-    my $retval = $self->app->schema->resultset('Actor')->search($where, $attr)->as_query;
-    my @a = @{${$retval}};
-  
+    $self->app->schema->resultset('Film')->search($where, $attr);
 
-    warn Data::Dump::dump(@a);
   };
+
+  while (my $row = $rs->next) {
+    my %data = $row->get_columns;
+    warn Dumper(\%data);
+  }
+
 }
 
 1;
