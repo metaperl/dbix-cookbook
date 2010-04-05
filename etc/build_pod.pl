@@ -5,7 +5,13 @@ use warnings;
 
 use File::Find;
 
-find(\&wanted, '.');
+my %opt = (
+	   wanted => \&wanted,
+	   no_chdir => 1
+	   );
+my @dir = ('.');
+
+find(\%opt, @dir);
 
 sub filter_pod_code {
 
@@ -18,8 +24,6 @@ sub filter_pod_code {
 }
 
 sub wanted {
-
-
 
   return unless /[.]tt$/ ;
 
@@ -34,7 +38,7 @@ sub wanted {
   my $config = {
 		INCLUDE_PATH => [ 'lib/DBIx/Cookbook' ],
 		FILTERS => { pod_code => \&filter_pod_code },
-		DEBUGGING => 1,
+		DEBUG => 1,
 		RELATIVE => 1
 	       };
 
