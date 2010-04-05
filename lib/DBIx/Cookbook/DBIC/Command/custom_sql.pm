@@ -6,7 +6,6 @@ use Data::Dump;
 
 #use DBIx::Cookbook::DBIC::CustomSQL;
 
-f
 
 =for comment
 

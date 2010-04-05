@@ -20,6 +20,7 @@ Version 0.01
 =head1 SYNOPSIS
 
    dbic_cmd distinct_count
+   dbic_cmd grouping
 
 =head1 DESCRIPTION
 
@@ -28,6 +29,20 @@ It is based on the Sakila database schema
 (L<http://dev.mysql.com/doc/sakila/en/sakila.html>). While it currently only
 contains code for L<DBIx::Class>, all ORMs are encouraged to contribute code 
 so that comparisons can be made between various ORMs for the same task.
+
+If you only want to read the code samples, then simply see L</RECIPES>. If you
+want to run them on actual data, the see L<INSTALLATION>. And for those that
+want to contribute more code, see L<CONTRIBUTING>.
+
+=head1 RECIPES
+
+The recipes section loosely bases its structure on 
+L<DBIx::Class::Manual::Cookbook>. It will give you a good overview of each
+ORMs capabilities.
+
+L<DBIx::Cookbook::doc::searching::fetch_all> - how to fetch all records
+
+
 
 =head1 INSTALLATION
 
@@ -51,7 +66,7 @@ schema classes.
  
 etc.
 
-=head1 EXTENSION (with another ORM)
+=head1 CONTRIBUTING (another ORM)
 
 
 

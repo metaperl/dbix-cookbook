@@ -1,0 +1,17 @@
+
+=pod
+
+=head1 NAME
+
+DBIx::Cookbook::Recipe::Searching::fetch_all - recipe to fetch all records
+
+=head1 DESCRIPTION
+
+We want the equivalent of C<SELECT * FROM table>
+
+=head1 RECIPES
+
+=head2 DBIx::Class
+
+[% INCLUDE $DBIC/fetch_all.pm | pod_code %]
+
