@@ -13,5 +13,5 @@ We want the equivalent of C<SELECT * FROM table>
 
 =head2 DBIx::Class
 
-[% INCLUDE $DBIC/fetch_all.pm | pod_code %]
+[% INCLUDE DBIC/Command/fetch_all.pm | pod_code %]
 

@@ -1,0 +1,6 @@
+recurse
+verbose
+src  = lib/DBIx/Cookbook/RecipeTT
+dest = lib/DBIx/Cookbook/Recipe
+accept = tt
+suffix tt=pod
