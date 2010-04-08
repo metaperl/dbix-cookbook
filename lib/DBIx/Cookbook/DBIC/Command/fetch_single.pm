@@ -8,8 +8,6 @@ sub execute {
   my ($self, $opt, $args) = @_;
 
   my $where = {};
-  my $attr = { order_by => 'first_name' };
-
 
   my $rs = $self->app->schema->resultset('Actor')->search($where, $attr);
 

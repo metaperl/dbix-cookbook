@@ -7,7 +7,11 @@ DBIx::Cookbook::Recipe::Searching::fetch_all - recipe to fetch all records
 
 =head1 DESCRIPTION
 
-We want the equivalent of C<SELECT * FROM table>
+Select all records from the C<actor> table, with the option to order by a column.
+
+Sample Usage:
+
+  ${orm}_cmd fetch_all --order_by last_name
 
 =head1 RECIPES
 

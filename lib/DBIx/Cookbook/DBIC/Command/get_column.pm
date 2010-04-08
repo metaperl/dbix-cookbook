@@ -8,10 +8,6 @@ use Data::Dump;
 sub execute {
   my ($self, $opt, $args) = @_;
 
-  my $where = {};
-  my $attr = { order_by => 'first_name' };
-
-
   my @data = $self->app->schema->resultset('FilmText')->get_column('title')->all;
 
   warn Data::Dump::dump(\@data);

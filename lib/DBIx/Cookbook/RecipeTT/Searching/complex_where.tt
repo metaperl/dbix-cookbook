@@ -1,0 +1,27 @@
+
+=pod
+
+=head1 NAME
+
+DBIx::Cookbook::Recipe::Searching::complex_where - fairly complex WHERE clause
+
+=head1 DESCRIPTION
+
+Execute the following query:
+
+  SELECT * FROM film 
+  WHERE
+    (DESCRIPTION LIKE 'drama%' AND title LIKE 'bikini%')
+     OR
+    title = 'BANG KWAI'
+
+Sample Usage:
+
+  ${orm}_cmd complex_where
+
+=head1 RECIPES
+
+=head2 DBIx::Class
+
+[% INCLUDE DBIC/Command/complex_where.pm | pod_code %]
+

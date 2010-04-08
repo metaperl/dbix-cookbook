@@ -40,9 +40,37 @@ The recipes section loosely bases its structure on
 L<DBIx::Class::Manual::Cookbook>. It will give you a good overview of each
 ORMs capabilities.
 
-L<DBIx::Cookbook::doc::searching::fetch_all> - how to fetch all records
+=over 4
 
+=item L<DBIx::Cookbook::doc::searching::fetch_all> 
 
+how to fetch all records from a table
+
+=item L<DBIx::Cookbook::doc::searching::fetch_single> 
+
+how to fetch a single record from a query which could potentially return many
+
+=item L<DBIx::Cookbook::doc::searching::complex_where> 
+
+how to issue a query with a complex where
+
+=item L<DBIx::Cookbook::doc::searching::db_func> 
+
+how to issue a query with a database function as one of the return columns
+
+=item L<DBIx::Cookbook::doc::searching::distinct_count>
+
+Flexibly return a distinct resultset or the count of it
+
+=item L<DBIx::Cookbook::doc::searching::get_column>
+
+  SELECT column FROM table
+
+=item L<DBIx::Cookbook::doc::searching::group_by>
+
+  GROUP BY
+
+=cut
 
 =head1 INSTALLATION
 

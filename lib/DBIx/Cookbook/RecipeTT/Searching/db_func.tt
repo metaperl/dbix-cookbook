@@ -1,0 +1,23 @@
+
+=pod
+
+=head1 NAME
+
+DBIx::Cookbook::Recipe::Searching::db_func - execute a db function on a column
+
+=head1 DESCRIPTION
+
+Execute the following query:
+
+  SELECT first_name, LENGTH(first_name) FROM actor
+
+Sample Usage:
+
+  ${orm}_cmd db_func
+
+=head1 RECIPES
+
+=head2 DBIx::Class
+
+[% INCLUDE DBIC/Command/complex_where.pm | pod_code %]
+

@@ -56,3 +56,5 @@ sub wanted {
     };
 
 }
+
+# http://github.com/petdance/perl101/blob/master/crank

@@ -1,0 +1,21 @@
+
+=pod
+
+=head1 NAME
+
+DBIx::Cookbook::Recipe::Searching::fetch_single - fetch a single record
+
+=head1 DESCRIPTION
+
+Select a single record from the C<actor> table
+
+Sample Usage:
+
+ shell> ${orm}_cmd fetch_single # where orm is dbic, skinny, rose, etc.
+
+=head1 RECIPES
+
+=head2 DBIx::Class
+
+[% INCLUDE DBIC/Command/fetch_single.pm | pod_code %]
+
