@@ -1,0 +1,23 @@
+
+=pod
+
+=head1 NAME
+
+DBIx::Cookbook::Recipe::Searching::specific_columns - retrieving specific columns
+
+=head1 DESCRIPTION
+
+Output the results of the query
+
+  SELECT first_name, last_name FROM actor
+
+Sample Usage:
+
+  shell> ${orm}_cmd specific_columns  # orm = dbic, skinny, rose, etc
+
+=head1 RECIPES
+
+=head2 DBIx::Class
+
+[% INCLUDE DBIC/Command/specific_columns.pm | pod_code %]
+

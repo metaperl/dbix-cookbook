@@ -1,0 +1,25 @@
+
+=pod
+
+=head1 NAME
+
+DBIx::Cookbook::Recipe::Searching::subquery - non-correlated subquery
+
+=head1 DESCRIPTION
+
+Output the results of the query
+
+  SELECT * FROM film f 
+  WHERE film_id 
+    IN ( SELECT film_id FROM film_category fc WHERE fc.film_category IN (6,11) );
+
+Sample Usage:
+
+  shell> ${orm}_cmd subquery  # orm = dbic, skinny, rose, etc
+
+=head1 RECIPES
+
+=head2 DBIx::Class
+
+[% INCLUDE DBIC/Command/subquery.pm | pod_code %]
+

@@ -70,6 +70,26 @@ Flexibly return a distinct resultset or the count of it
 
   GROUP BY
 
+=item L<DBIx::Cookbook::doc::searching::paged>
+
+flexible creation of paged result sets
+
+=item L<DBIx::Cookbook::doc::searching::predefined_search>
+
+example of storing a predefined search
+
+=item L<DBIx::Cookbook::doc::searching::specific_columns>
+
+specifying which columns to retrieve from a search
+
+=item L<DBIx::Cookbook::doc::searching::sql_lhs>
+
+using SQL on the LHS of an expression (not usually advised)
+
+=item L<DBIx::Cookbook::doc::searching::subquery_correlated>
+
+ORM code for correlated subqueries
+
 =cut
 
 =head1 INSTALLATION

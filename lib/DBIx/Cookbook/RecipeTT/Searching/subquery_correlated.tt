@@ -1,0 +1,30 @@
+
+=pod
+
+=head1 NAME
+
+DBIx::Cookbook::Recipe::Searching::subquery_correlated - correlated subquery
+
+=head1 DESCRIPTION
+
+Output the results of the query
+
+ SELECT
+  *
+ FROM
+  payment p_outer
+ WHERE 
+  amount > (SELECT AVG(amount) 
+            FROM payment p_inner 
+            WHERE p_outer.customer_id=p_inner.customer_id)
+
+Sample Usage:
+
+  shell> ${orm}_cmd subquery_correlated  # orm = dbic, skinny, rose, etc
+
+=head1 RECIPES
+
+=head2 DBIx::Class
+
+[% INCLUDE DBIC/Command/subquery_correlated.pm | pod_code %]
+
