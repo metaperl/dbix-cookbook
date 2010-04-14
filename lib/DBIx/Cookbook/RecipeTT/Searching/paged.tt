@@ -3,7 +3,7 @@
 
 =head1 NAME
 
-DBIx::Cookbook::Recipe::Searching::paged - flexible paged result sets
+DBIx::Cookbook::Recipe::Searching::paged - paged result sets
 
 =head1 DESCRIPTION
 
@@ -21,6 +21,8 @@ be listed, with any number from 1 to 5 being acceptable.
 Sample Usage:
 
   shell> ${orm}_cmd paged  # orm = dbic, skinny, rose, etc
+                           # page=1 and rows=10 are defaults
+  shell> ${orm}_cmd paged  --page=2 rows=4
 
 =head1 RECIPES
 

@@ -11,7 +11,7 @@ Select all records from the C<actor> table, with the option to order by a column
 
 Sample Usage:
 
-  ${orm}_cmd fetch_all --order_by last_name
+  ${orm}_cmd fetch_all --order_by last_name     # orm = dbic, skinny, rose, etc
 
 =head1 RECIPES
 

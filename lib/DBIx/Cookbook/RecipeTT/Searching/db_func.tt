@@ -13,11 +13,11 @@ Execute the following query:
 
 Sample Usage:
 
-  ${orm}_cmd db_func
+  ${orm}_cmd db_func     # orm = dbic, skinny, rose, etc
 
 =head1 RECIPES
 
 =head2 DBIx::Class
 
-[% INCLUDE DBIC/Command/complex_where.pm | pod_code %]
+[% INCLUDE DBIC/Command/db_func.pm | pod_code %]
 

@@ -18,11 +18,12 @@ or
 
 Sample Usage:
 
-  ${orm}_cmd distinct_count
+  ${orm}_cmd distinct_count          # orm = dbic, skinny, rose, etc
+  ${orm}_cmd distinct_count --count  # to get the count of the SELECT
 
 =head1 RECIPES
 
 =head2 DBIx::Class
 
-[% INCLUDE DBIC/Command/complex_where.pm | pod_code %]
+[% INCLUDE DBIC/Command/distinct_count.pm | pod_code %]
 

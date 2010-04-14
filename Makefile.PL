@@ -10,9 +10,19 @@ author_tests('xt');
 build_requires 'Test::More';
 
 requires 'DBI';
-reqiures 'MooseX::App::Cmd';
+requires 'MooseX::App::Cmd';
 
 auto_install;
+
+postamble <<EOPOST;
+pod:
+	perl etc/build_pod.pl
+
+release: pod tardist
+	echo "ready for release"
+EOPOST
+
+
 
 WriteAll;
 

@@ -8,14 +8,7 @@ our $VERSION = '0.01';
 
 =head1 NAME
 
-DBIx::Cookbook - executable cookbook code for DBI-based ORMs
-
-=head1 VERSION
-
-Version 0.01
-
-=cut
-
+DBIx::Cookbook - executable cookbook code for DBI(-based ORMs)?
 
 =head1 SYNOPSIS
 
@@ -26,69 +19,25 @@ Version 0.01
 
 L<DBIx::Cookbook> is a working cookbook of code for L<DBI>-based ORMs. 
 It is based on the Sakila database schema 
-(L<http://dev.mysql.com/doc/sakila/en/sakila.html>). While it currently only
-contains code for L<DBIx::Class>, all ORMs are encouraged to contribute code 
-so that comparisons can be made between various ORMs for the same task.
+(L<http://dev.mysql.com/doc/sakila/en/sakila.html>). Currently, the
+majority of code is for L<DBIx::Class> but all ORMs are encouraged to
+contribute code so that comparisons can be made between various ORMs
+for the same task. 
 
 If you only want to read the code samples, then simply see L</RECIPES>. If you
-want to run them on actual data, the see L<INSTALLATION>. And for those that
-want to contribute more code, see L<CONTRIBUTING>.
+want to run them on actual data, the see L</INSTALLATION>. And for those that
+want to contribute more code, see L</CONTRIBUTING>.
 
 =head1 RECIPES
 
-The recipes section loosely bases its structure on 
-L<DBIx::Class::Manual::Cookbook>. It will give you a good overview of each
-ORMs capabilities.
+The recipes section gives you a good overview of each
+ORMs capabilities with fully-working code that you can actually run!
 
-=over 4
+=head2 Searching
 
-=item L<DBIx::Cookbook::doc::searching::fetch_all> 
+R is the most common CRUD operation. L<DBIx::Cookbook::Recipe::Searching> will
+show you common search tasks.
 
-how to fetch all records from a table
-
-=item L<DBIx::Cookbook::doc::searching::fetch_single> 
-
-how to fetch a single record from a query which could potentially return many
-
-=item L<DBIx::Cookbook::doc::searching::complex_where> 
-
-how to issue a query with a complex where
-
-=item L<DBIx::Cookbook::doc::searching::db_func> 
-
-how to issue a query with a database function as one of the return columns
-
-=item L<DBIx::Cookbook::doc::searching::distinct_count>
-
-Flexibly return a distinct resultset or the count of it
-
-=item L<DBIx::Cookbook::doc::searching::get_column>
-
-  SELECT column FROM table
-
-=item L<DBIx::Cookbook::doc::searching::group_by>
-
-  GROUP BY
-
-=item L<DBIx::Cookbook::doc::searching::paged>
-
-flexible creation of paged result sets
-
-=item L<DBIx::Cookbook::doc::searching::predefined_search>
-
-example of storing a predefined search
-
-=item L<DBIx::Cookbook::doc::searching::specific_columns>
-
-specifying which columns to retrieve from a search
-
-=item L<DBIx::Cookbook::doc::searching::sql_lhs>
-
-using SQL on the LHS of an expression (not usually advised)
-
-=item L<DBIx::Cookbook::doc::searching::subquery_correlated>
-
-ORM code for correlated subqueries
 
 =cut
 
@@ -96,15 +45,35 @@ ORM code for correlated subqueries
 
 =head2 Install the Sakila database into MySQL
 
-=head2 Download and Configure DBIx::Cookbook
+
+=head3 Retain the MySQL login information
+
+
+
+=head2 Download and configure DBIx::Cookbook
+
+Edit F<lib/DBIx/Cookbook/DBH.pm>, setting the C<dsn>, C<user>, and
+C<pass> in C<%c>:
+
+  our %c = 
+  (
+   dsn => "dbi:mysql:database=sakila;host=localhost;port=3306",
+   user => 'shootout',
+   pass => 'shootout1'
+  );
+
 
 =head3 Configure DBIx::Cookbook::DBH
 
-=head3 Connect your ORM(s) to the Sakila database via DBIx::Cookbook::DBH
+=head3 Connect the ORM to the Sakila database
+
+=head4 DBIx::Class
 
 The C<scripts> directory of the distribution contains F<dbic_loader>, a script
 which runs L<DBIx::Class::Schema::Loader> on the Sakila instance to build the
 schema classes.
+
+All of the DBIx::Class code leverages C<DBIx::Cookbook::DBH>.
 
 =head2 Run the Cookbook examples
 
@@ -116,6 +85,28 @@ etc.
 
 =head1 CONTRIBUTING (another ORM)
 
+It is highly desired to have code from as many ORMs as possible. In
+this section we will go through the steps to install another "ORM"
+into L<DBIx::Cookbook>. 
+
+Let's see how we might add L<DBIx::Simple> to the Cookbook.
+
+=head2 Create a command class
+
+L<DBIx::Cookbook> uses L<MooseX::App::Cmd> to separate the mechanics
+of scripting from command development. Let's copy 
+F<lib/DBIx/Cookbook/DBIC.pm> to 
+F<lib/DBIx/Cookbook/Simple.pm> and modify it so that all of our 
+DBIx::Simple commands will be able to make DBIx::Simple APi calls 
+by simply doing:
+
+   $self->app->simple->simple_api_call()
+
+
+
+=head3 Edit installation section
+
+Add a section to L</Connect the ORM to the Sakila database>
 
 
 =head1 AUTHOR

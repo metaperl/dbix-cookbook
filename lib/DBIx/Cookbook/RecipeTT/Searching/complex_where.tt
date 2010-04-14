@@ -17,7 +17,7 @@ Execute the following query:
 
 Sample Usage:
 
-  ${orm}_cmd complex_where
+  ${orm}_cmd complex_where    # orm = dbic, skinny, rose, etc
 
 =head1 RECIPES
 

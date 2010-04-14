@@ -8,7 +8,8 @@ use Data::Dump;
 sub execute {
   my ($self, $opt, $args) = @_;
 
-  my @data = $self->app->schema->resultset('FilmText')->get_column('title')->all;
+  my @data = 
+    $self->app->schema->resultset('FilmText')->get_column('title')->all;
 
   warn Data::Dump::dump(\@data);
 
