@@ -45,12 +45,19 @@ show you common search tasks.
 
 =head2 Install the Sakila database into MySQL
 
+The MySQL installation instructions:
 
-=head3 Retain the MySQL login information
+L<http://dev.mysql.com/doc/sakila/en/sakila.html#sakila-installation>
 
+are quite clear. Be sure to retain the MySQL login information because you
+will need it for the next step.
 
 
 =head2 Download and configure DBIx::Cookbook
+
+   git clone http://github.com/metaperl/dbix-cookbook.git
+
+=head3 Configure DBIx::Cookbook::DBH
 
 Edit F<lib/DBIx/Cookbook/DBH.pm>, setting the C<dsn>, C<user>, and
 C<pass> in C<%c>:
@@ -62,25 +69,14 @@ C<pass> in C<%c>:
    pass => 'shootout1'
   );
 
-
-=head3 Configure DBIx::Cookbook::DBH
-
-=head3 Connect the ORM to the Sakila database
-
-=head4 DBIx::Class
-
-The C<scripts> directory of the distribution contains F<dbic_loader>, a script
-which runs L<DBIx::Class::Schema::Loader> on the Sakila instance to build the
-schema classes.
-
-All of the DBIx::Class code leverages C<DBIx::Cookbook::DBH>.
-
 =head2 Run the Cookbook examples
+
+For DBIx::Class, you would execute F<scripts/dbic_cmd>:
 
   dbic_cmd complex_where
   dbic_cmd paged
   dbic_cmd subquery
- 
+
 etc.
 
 =head1 CONTRIBUTING (another ORM)

@@ -24,3 +24,18 @@ make_schema_at
   );
 
 
+=head1 NAME
+
+dbic_loader - a script to create a DBIx::Class schema 
+
+=head1 SYNOPSIS
+
+  ./scripts/dbic_loader
+
+=head1 DESCRIPTION
+
+The C<scripts> directory of the distribution contains F<dbic_loader>, a script
+which runs L<DBIx::Class::Schema::Loader> on the Sakila instance to build the
+schema classes.
+
+It leverages L<DBIx::Cookbook::DBH>.

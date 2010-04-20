@@ -5,3 +5,22 @@ use DBIx::Cookbook::DBIC;
 my $app = DBIx::Cookbook::DBIC;
 
 $app->run;
+
+
+=head1 NAME
+
+dbic_cmd - run DBIx::Class cookbook examples
+
+=head1 SYNOPSIS
+
+  ./scripts/dbic_cmd subquery
+
+=head1 DESCRIPTION
+
+This script C<use>s L<DBIx::Cookbook::DBIC> which makes use of
+C<MooseX::App::Cmd> to provide a modular command-line interface to a
+number of shell scripts.
+
+It leverages L<DBIx::Cookbook::DBH>.
+
+=cut
