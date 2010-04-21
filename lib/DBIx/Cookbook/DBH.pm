@@ -3,26 +3,37 @@ package DBIx::Cookbook::DBH;
 use warnings;
 use strict;
 
+use DBIx::DBH;
 
-our %c = 
+my %dat = 
   (
-   dsn => "dbi:mysql:database=sakila;host=localhost;port=3306",
+   driver => 'mysql',
+   dbname => 'sakila',
+   host   => 'localhost',
+   port   => 3306,
    user => 'shootout',
-   pass => 'shootout1'
+   password => 'shootout1'
   );
+
+my %opt = ( RaiseError => 1 ) ;
+
+=for comment
+
+The code below is ol'sk00l. DBIx::DBH should be rewritten 
+
+=cut
 
 
 sub dbh {
 
     use DBI;
 
-    #warn "my dbh = DBI->connect( $c{dsn}, $c{user}, $c{pass}, { RaiseError => 1 } ) ;" ;
-    my $dbh = DBI->connect( $c{dsn}, $c{user}, $c{pass}, { RaiseError => 1 } ) ;
+    my $dbh = DBIx::DBH->connect( %dat, %opt )
 
 }
 
 sub connect_data {
-    \%c;
+  DBIx::DBH->connect_data( %dat, %opt )
 }
 
 1;

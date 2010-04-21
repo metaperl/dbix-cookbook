@@ -8,6 +8,7 @@ sub execute {
   my ($self, $opt, $args) = @_;
 
   my $where = {};
+  my $attr = {};
 
   my $rs = $self->app->schema->resultset('Actor')->search($where, $attr);
 

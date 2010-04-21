@@ -69,6 +69,14 @@ C<pass> in C<%c>:
    pass => 'shootout1'
   );
 
+=head4 Make amends in DBIx::Cookbook::Rose::Base
+
+L<Rose::DB> is used to set up connection information for the ORM
+L<Rose::DB::Object>. Unfortunately L<DBIx::Cookbook::DBH> follows the 
+L<DBI> dsn convention of the C<dsn> being a compound datum.
+
+The impact of this: it is difficult to 
+
 =head2 Run the Cookbook examples
 
 For DBIx::Class, you would execute F<scripts/dbic_cmd>:
@@ -82,17 +90,17 @@ etc.
 =head1 CONTRIBUTING (another ORM)
 
 It is highly desired to have code from as many ORMs as possible. In
-this section we will go through the steps to install another "ORM"
-into L<DBIx::Cookbook>. 
+this section we will go through the steps to install another ORM
+into L<DBIx::Cookbook>.
 
-Let's see how we might add L<DBIx::Simple> to the Cookbook.
+Let's see how we might add L<Rose::DB::Object> to the Cookbook.
 
 =head2 Create a command class
 
 L<DBIx::Cookbook> uses L<MooseX::App::Cmd> to separate the mechanics
 of scripting from command development. Let's copy 
 F<lib/DBIx/Cookbook/DBIC.pm> to 
-F<lib/DBIx/Cookbook/Simple.pm> and modify it so that all of our 
+F<lib/DBIx/Cookbook/Rose.pm> and modify it so that all of our 
 DBIx::Simple commands will be able to make DBIx::Simple APi calls 
 by simply doing:
 
