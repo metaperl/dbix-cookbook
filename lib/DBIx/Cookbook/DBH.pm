@@ -5,35 +5,36 @@ use strict;
 
 use DBIx::DBH;
 
-my %dat = 
+my %auth = 
+  (
+   username => 'shootout',
+   password => 'shootout1'
+  );
+
+my %dsn = 
   (
    driver => 'mysql',
    dbname => 'sakila',
    host   => 'localhost',
    port   => 3306,
-   user => 'shootout',
-   password => 'shootout1'
   );
 
-my %opt = ( RaiseError => 1 ) ;
+my %attr = ( RaiseError => 1 ) ;
 
-=for comment
-
-The code below is ol'sk00l. DBIx::DBH should be rewritten 
-
-=cut
-
+my $config = DBIx::DBH->new
+  (
+   %auth,
+   dsn => \%dsn,
+   attr => \%attr
+  );
 
 sub dbh {
 
-    use DBI;
-
-    my $dbh = DBIx::DBH->connect( %dat, %opt )
-
+  $config->dbh;
 }
 
 sub connect_data {
-  DBIx::DBH->connect_data( %dat, %opt )
+  $config->for_dbi;
 }
 
 1;

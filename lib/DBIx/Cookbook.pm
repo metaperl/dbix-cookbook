@@ -69,13 +69,6 @@ C<pass> in C<%c>:
    pass => 'shootout1'
   );
 
-=head4 Make amends in DBIx::Cookbook::Rose::Base
-
-L<Rose::DB> is used to set up connection information for the ORM
-L<Rose::DB::Object>. Unfortunately L<DBIx::Cookbook::DBH> follows the 
-L<DBI> dsn convention of the C<dsn> being a compound datum.
-
-The impact of this: it is difficult to 
 
 =head2 Run the Cookbook examples
 
@@ -90,12 +83,22 @@ etc.
 =head1 CONTRIBUTING (another ORM)
 
 It is highly desired to have code from as many ORMs as possible. In
-this section we will go through the steps to install another ORM
+this section we will review the steps to install another ORM
 into L<DBIx::Cookbook>.
 
-Let's see how we might add L<Rose::DB::Object> to the Cookbook.
+=head2 Rose::DB::Object
 
-=head2 Create a command class
+Let's see how I added L<Rose::DB::Object> to the Cookbook. I've only written
+one reciple, so it still needs to flesh out the problem space with examples,
+but I will let the RDBO addicts handle that C<< ;) >>.
+
+=head3 Create a command class
+
+I copied the DBIx::Class command class, L<DBIx::Cookbook::DBIC> to
+L<DBIx::Cookbook::RDBO> and modified it
+
+
+
 
 L<DBIx::Cookbook> uses L<MooseX::App::Cmd> to separate the mechanics
 of scripting from command development. Let's copy 
