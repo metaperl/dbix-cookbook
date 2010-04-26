@@ -21,18 +21,6 @@ has '+dsn' =>
 has '+attr' => (default => sub { { RaiseError => 1 } } );
 
 
-sub dbh {
-  my($self)=@_;
-
-  DBI->connect($self->connect_data);
-}
-
-sub connect_data {
-  my($self)=@_;
-
-  $self->for_dbi;
-}
-
 1;
 
 =head1 NAME
