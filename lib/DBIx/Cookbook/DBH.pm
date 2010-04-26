@@ -1,40 +1,36 @@
 package DBIx::Cookbook::DBH;
 
-use warnings;
-use strict;
+use Moose;
+extends 'DBIx::DBH';
 
-use DBIx::DBH;
+has '+username' => (default => 'shootout');
+has '+password' => (default => 'shootout1');
 
-my %auth = 
-  (
-   username => 'shootout',
-   password => 'shootout1'
-  );
-
-my %dsn = 
-  (
+has '+dsn' => 
+  (default =>
+   sub {
+     {
    driver => 'mysql',
    dbname => 'sakila',
    host   => 'localhost',
    port   => 3306,
+ }
+  }
   );
 
-my %attr = ( RaiseError => 1 ) ;
+has '+attr' => (default => sub { { RaiseError => 1 } } );
 
-my $config = DBIx::DBH->new
-  (
-   %auth,
-   dsn => \%dsn,
-   attr => \%attr
-  );
 
 sub dbh {
+  my($self)=@_;
 
-  $config->dbh;
+  DBI->connect($self->connect_data);
 }
 
 sub connect_data {
-  $config->for_dbi;
+  my($self)=@_;
+
+  $self->for_dbi;
 }
 
 1;

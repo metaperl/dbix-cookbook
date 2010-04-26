@@ -21,6 +21,9 @@ sub execute {
 
   my $rs = $self->app->schema->resultset('Actor')->search($where, $attr);
 
+  use DBIx::Cookbook::RDBO::Schema::Actor::Manager;
+
+
   while (my $row = $rs->next) {
     use Data::Dumper;
     my %data = $row->get_columns;

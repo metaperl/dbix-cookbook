@@ -13,7 +13,7 @@ sub BUILD {
   use DBIx::Cookbook::DBIC::Sakila;
   use DBIx::Cookbook::DBH;
 
-  my $schema = DBIx::Cookbook::DBIC::Sakila->connect(  sub { DBIx::Cookbook::DBH::dbh } );
+  my $schema = DBIx::Cookbook::DBIC::Sakila->connect(  sub { my $config = DBIx::Cookbook::DBH->new; $config->dbh } );
 
   #### ->load_namespaces for DBIx/Cookbook/DBIC/CustomResult ???
 
