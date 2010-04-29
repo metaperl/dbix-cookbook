@@ -6,17 +6,16 @@ extends 'DBIx::DBH';
 has '+username' => (default => 'shootout');
 has '+password' => (default => 'shootout1');
 
-has '+dsn' => 
-  (default =>
-   sub {
-     {
-   driver => 'mysql',
-   dbname => 'sakila',
-   host   => 'localhost',
-   port   => 3306,
- }
-  }
-  );
+has '+dsn' => (
+    default => sub {
+        {
+            driver => 'mysql',
+            dbname => 'sakila',
+            host   => 'localhost',
+            port   => 3306,
+        };
+    }
+);
 
 has '+attr' => (default => sub { { RaiseError => 1 } } );
 

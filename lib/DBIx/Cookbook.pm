@@ -59,15 +59,29 @@ will need it for the next step.
 
 =head3 Configure DBIx::Cookbook::DBH
 
-Edit F<lib/DBIx/Cookbook/DBH.pm>, setting the C<dsn>, C<user>, and
-C<pass> in C<%c>:
+Edit F<lib/DBIx/Cookbook/DBH.pm>, setting the C<dsn>, C<username>, and
+C<password> attributes of the class:
 
-  our %c = 
-  (
-   dsn => "dbi:mysql:database=sakila;host=localhost;port=3306",
-   user => 'shootout',
-   pass => 'shootout1'
-  );
+    package DBIx::Cookbook::DBH;
+    
+    use Moose;
+    extends 'DBIx::DBH';
+    
+    has '+username' => (default => 'shootout');
+    has '+password' => (default => 'shootout1');
+    
+    has '+dsn' => (
+        default => sub {
+            {
+                driver => 'mysql',
+                dbname => 'sakila',
+                host   => 'localhost',
+                port   => 3306,
+            };
+        }
+    );
+    
+    has '+attr' => (default => sub { { RaiseError => 1 } } );
 
 
 =head2 Run the Cookbook examples
