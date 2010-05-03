@@ -3,22 +3,21 @@ package DBIx::Cookbook::DBH;
 use Moose;
 extends 'DBIx::DBH';
 
-has '+username' => (default => 'shootout');
-has '+password' => (default => 'shootout1');
+has '+username' => ( default => 'shootout' );
+has '+password' => ( default => 'shootout1' );
 
 has '+dsn' => (
     default => sub {
         {
-            driver => 'mysql',
-            dbname => 'sakila',
-            host   => 'localhost',
-            port   => 3306,
+            driver   => 'mysql',
+            database => 'sakila',
+            host     => 'localhost',
+            port     => 3306,
         };
     }
 );
 
-has '+attr' => (default => sub { { RaiseError => 1 } } );
-
+has '+attr' => ( default => sub { { RaiseError => 1 } } );
 
 1;
 

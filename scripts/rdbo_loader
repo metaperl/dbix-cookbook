@@ -3,25 +3,22 @@
 use Rose::DB::Object::Loader;
 
 use DBIx::Cookbook::DBH;
+use DBIx::Cookbook::RDBO::RoseDB;
 
 use strict;
 use warnings;
 
-my $loader = 
+my $loader = Rose::DB::Object::Loader->new
+  (
+   db => DBIx::Cookbook::RDBO::RoseDB->new('default'),
+   class_prefix => 'Sakila',
+   );
 
-my $dump_dir="$ENV{DBIX_COOK}/lib";
-my $c = DBIx::Cookbook::DBH::connect_data;
+my $dump_dir="$ENV{DBIX_COOK}/lib/DBIx/Cookbook/RDBO";
 
-make_schema_at 
-  ( 
-   'DBIx::Cookbook::DBIC::Sakila',
-   {
-    debug => 1, 
-    dump_directory => $dump_dir,
-    },
-   [
-    $c->{dsn}, $c->{user}, $c->{pass}
-    ]
+$loader->make_modules
+  (
+   module_dir => $dump_dir
   );
 
 

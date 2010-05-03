@@ -12,23 +12,19 @@ has order_by => (
 sub execute {
   my ($self, $opt, $args) = @_;
 
-  my $where = {};
-  my $attr = {};
+  my @attr = $opt->{order_by} ? (sort_by => $opt->{order_by} ) : () ;
 
-  if (my $val = $opt->{order_by}) {
-    $attr->{order_by} = $val;
-  }
+  use Sakila::Actor::Manager;
 
-  my $rs = $self->app->schema->resultset('Actor')->search($where, $attr);
+  # NEITHER WORKS:
+  #my $result = Sakila::Actor::Manager->get_actors;
+  #my $result = Sakila::Actor::Manager->get_actors_iterator(@attr);
 
-  use DBIx::Cookbook::RDBO::Schema::Actor::Manager;
+  warn $result;
 
-
-  while (my $row = $rs->next) {
+  while (my $row = $result->next) {
     use Data::Dumper;
-    my %data = $row->get_columns;
-    warn Dumper(\%data);
-    
+    warn Dumper($row);
   }
 }
 

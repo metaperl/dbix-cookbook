@@ -74,7 +74,7 @@ C<password> attributes of the class:
         default => sub {
             {
                 driver => 'mysql',
-                dbname => 'sakila',
+                database => 'sakila',
                 host   => 'localhost',
                 port   => 3306,
             };
@@ -102,32 +102,26 @@ into L<DBIx::Cookbook>.
 
 =head2 Rose::DB::Object
 
-Let's see how I added L<Rose::DB::Object> to the Cookbook. I've only written
-one reciple, so it still needs to flesh out the problem space with examples,
-but I will let the RDBO addicts handle that C<< ;) >>.
+Let's see how I added L<Rose::DB::Object> to the Cookbook.
 
 =head3 Create a command class
 
-I copied the DBIx::Class command class, L<DBIx::Cookbook::DBIC> to
-L<DBIx::Cookbook::RDBO> and modified it
-
-
-
-
 L<DBIx::Cookbook> uses L<MooseX::App::Cmd> to separate the mechanics
-of scripting from command development. Let's copy 
-F<lib/DBIx/Cookbook/DBIC.pm> to 
-F<lib/DBIx/Cookbook/Rose.pm> and modify it so that all of our 
-DBIx::Simple commands will be able to make DBIx::Simple APi calls 
-by simply doing:
+of scripting from command development. Let's copy
+F<lib/DBIx/Cookbook/DBIC.pm> to
+F<lib/DBIx/Cookbook/RDBO.pm> and modify it.
 
-   $self->app->simple->simple_api_call()
+=head3 Write a ::Loader script
 
+F</scripts/rdbo_loader> was used to scan the entire database for
+entities and relations and store them in Perl classes
 
+=head3 Write a command script
 
-=head3 Edit installation section
+L<DBIx::Cookbook::RDBO::Command::fetch_all> is the command that I
+implemented after writing the base command class and creating 
+Rose::DB::Object classes for the database schema
 
-Add a section to L</Connect the ORM to the Sakila database>
 
 
 =head1 AUTHOR
