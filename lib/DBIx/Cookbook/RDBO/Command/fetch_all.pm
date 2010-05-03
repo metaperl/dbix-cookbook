@@ -16,8 +16,9 @@ sub execute {
 
   use Sakila::Actor::Manager;
 
-  # NEITHER WORKS:
-  #my $result = Sakila::Actor::Manager->get_actors;
+  # NEITHER CALL to Sakila::Actor::Manager WORKS
+
+  my $result = Sakila::Actor::Manager->get_actors;
   #my $result = Sakila::Actor::Manager->get_actors_iterator(@attr);
 
   warn $result;
