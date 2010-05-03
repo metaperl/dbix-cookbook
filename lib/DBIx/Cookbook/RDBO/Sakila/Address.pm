@@ -2,7 +2,7 @@ package Sakila::Address;
 
 use strict;
 
-use base qw(Sakila::DB::Object::AutoBase1);
+use base qw(DBIx::Cookbook::RDBO::Sakila);
 
 __PACKAGE__->meta->setup(
     table   => 'address',
