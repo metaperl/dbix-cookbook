@@ -18,4 +18,3 @@ __PACKAGE__->meta->setup(
 
 1;
 
-use Rose::DB::Object::Helpers qw(as_tree);

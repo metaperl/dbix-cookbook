@@ -12,4 +12,3 @@ __PACKAGE__->make_manager_methods('address');
 
 1;
 
-use Rose::DB::Object::Helpers qw(as_tree);

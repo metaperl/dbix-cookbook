@@ -15,16 +15,14 @@ sub execute {
   my @attr = $opt->{order_by} ? (sort_by => $opt->{order_by} ) : () ;
 
   use Sakila::Actor::Manager;
-
+  use Rose::DB::Object::Helpers qw(as_tree);
 
   #my $result = Sakila::Actor::Manager->get_actor;
   my $result = Sakila::Actor::Manager->get_actor_iterator(@attr);
 
-  warn $result;
-
   while (my $row = $result->next) {
     use Data::Dumper;
-    warn Dumper($row->as_tree());
+    warn Dumper(as_tree($row));
   }
 }
 

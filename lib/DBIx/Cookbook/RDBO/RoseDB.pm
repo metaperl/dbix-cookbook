@@ -16,9 +16,6 @@ my %register =   (
    $config->for_rose_db
   );
 
-use Data::Dumper;
-warn Dumper \%register;
-
 __PACKAGE__->register_db(%register);
 
 1;
