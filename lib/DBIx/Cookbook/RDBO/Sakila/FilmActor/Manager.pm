@@ -12,3 +12,4 @@ __PACKAGE__->make_manager_methods('film_actor');
 
 1;
 
+use Rose::DB::Object::Helpers qw(as_tree);

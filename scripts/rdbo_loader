@@ -18,7 +18,10 @@ my $dump_dir="$ENV{DBIX_COOK}/lib/DBIx/Cookbook/RDBO";
 
 $loader->make_modules
   (
-   module_dir => $dump_dir
+   module_dir => $dump_dir,
+   module_postamble =><<EOCODE
+use Rose::DB::Object::Helpers qw(as_tree);
+EOCODE
   );
 
 

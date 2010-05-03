@@ -16,16 +16,15 @@ sub execute {
 
   use Sakila::Actor::Manager;
 
-  # NEITHER CALL to Sakila::Actor::Manager WORKS
 
-  my $result = Sakila::Actor::Manager->get_actors;
-  #my $result = Sakila::Actor::Manager->get_actors_iterator(@attr);
+  #my $result = Sakila::Actor::Manager->get_actor;
+  my $result = Sakila::Actor::Manager->get_actor_iterator(@attr);
 
   warn $result;
 
   while (my $row = $result->next) {
     use Data::Dumper;
-    warn Dumper($row);
+    warn Dumper($row->as_tree());
   }
 }
 
