@@ -1,12 +1,13 @@
 package DBIx::Cookbook::RDBO::Sakila;
 
-# This is a package I manually created to have fewer use statements in my code
-# Then again, on second thought, I'm not adding any code. I'm going to use
-# each ORM as it stands
+# This is a package I manually created so that I could use the helper methods
 
-# The way to do this with RDBO is $loader->make_classes
+use base 'Rose::DB::Object';
 
-use DBIx::Cookbook::RDBO::Sakila::Actor::Manager;
+use DBIx::Cookbook::RDBO::RoseDB;
+sub init_db { DBIx::Cookbook::RDBO::RoseDB->new() }
+
+use Rose::DB::Object::Helpers qw(as_tree);
 
 1;
 
