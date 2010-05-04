@@ -1,0 +1,9 @@
+# presumes $DIST/config.bashrc has been sourced
+
+cd $ENV{DBIX_COOK}
+git pull
+
+killall pod_server
+
+pod_server
+
