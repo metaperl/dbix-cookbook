@@ -19,3 +19,7 @@ Sample Usage:
 
 [% INCLUDE DBIC/Command/fetch_all.pm | pod_code %]
 
+=head2 DBIx::Class
+
+[% INCLUDE RDBO/Command/fetch_all.pm | pod_code %]
+
