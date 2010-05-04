@@ -1,5 +1,7 @@
 # presumes $DIST/config.bashrc has been sourced
 
+source ../config.bashrc
+
 cd $ENV{DBIX_COOK}
 git pull
 
