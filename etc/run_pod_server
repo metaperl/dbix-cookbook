@@ -1,8 +1,7 @@
-# presumes $DIST/config.bashrc has been sourced
+# presumes invokved from $DIST as ./etc/run_pod_server
 
-source ../config.bashrc
+source ./config.bashrc
 
-cd $ENV{DBIX_COOK}
 git pull
 
 killall pod_server
