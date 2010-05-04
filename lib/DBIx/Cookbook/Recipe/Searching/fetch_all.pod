@@ -50,7 +50,7 @@ Sample Usage:
     
     1;
 
-=head2 DBIx::Class
+=head2 Rose::DB::Object
 
     package DBIx::Cookbook::RDBO::Command::fetch_all;
     use Moose;

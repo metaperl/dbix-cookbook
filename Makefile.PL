@@ -19,7 +19,7 @@ postamble <<EOPOST;
 pod:
 	perl etc/build_pod.pl
 
-release: pod tardist
+release: manifest pod tardist
 	echo "ready for release"
 EOPOST
 
