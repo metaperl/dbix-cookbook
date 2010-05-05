@@ -9,7 +9,8 @@ BEGIN {
 
 }
 
-use DBIx::Skinny::Schema setup => 
+# use DBIx::Skinny::Schema setup => 
+use Sakila::Schema setup => 
   {
    $config->for_dbi
   };
