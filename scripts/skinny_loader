@@ -1,39 +1,51 @@
 #!/usr/bin/perl
 
 use DBIx::Skinny::Schema::Loader qw/ make_schema_at /;
+use DBIx::Cookbook::DBH;
 
 use strict;
 use warnings;
 
 
-my $dump_dir="$ENV{DBIX_COOK}/lib";
-my $c = DBIx::Cookbook::DBH::connect_data;
+my $dump_dir="$ENV{DBIX_COOK}/lib/DBIx/Cookbook/Skinny/";
 
-print make_schema_at
+my $pkg = 'Sakila::Schema';
+(my $file = $pkg) =~ s!::!/! ;
+my $full = sprintf "%s%s", $dump_dir, "$file.pm";
+
+
+use autodie;
+open my $fh, ">", $full;
+
+my $config = DBIx::Cookbook::DBH->new;
+
+
+my $schema_code = make_schema_at
   ( 
-   'DBIx::Cookbook::Skinny::Sakila',
+   $pkg,
    {
     debug => 1, 
-    dump_directory => $dump_dir,
     },
    [
-    $c->{dsn}, $c->{user}, $c->{pass}
+    $config->for_dbi
     ]
   );
 
 
+print $fh $schema_code;
+
 =head1 NAME
 
-dbic_loader - a script to create a DBIx::Class schema 
+skinny_loader - a script to create a DBIx::Skinny schema 
 
 =head1 SYNOPSIS
 
-  ./scripts/dbic_loader
+  ./scripts/skinny_loader
 
 =head1 DESCRIPTION
 
-The C<scripts> directory of the distribution contains F<dbic_loader>, a script
-which runs L<DBIx::Class::Schema::Loader> on the Sakila instance to build the
+The C<scripts> directory of the distribution contains F<skinny_loader>, a script
+which runs L<DBIx::Skinny::Schema::Loader> on the Sakila instance to build the
 schema classes.
 
 It leverages L<DBIx::Cookbook::DBH>.

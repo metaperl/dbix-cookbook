@@ -12,6 +12,7 @@ build_requires 'Test::More';
 requires 'DBI';
 requires 'MooseX::App::Cmd';
 requires 'DBIx::DBH';
+requires 'autodie';
 
 auto_install;
 

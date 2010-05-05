@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+
+
+use DBIx::Cookbook::Skinny;
+my $app = DBIx::Cookbook::Skinny;
+
+$app->run;
+
+
+=head1 NAME
+
+skinny_cmd - run DBIx::Skinny cookbook examples
+
+=head1 SYNOPSIS
+
+  ./scripts/skinny_cmd fetch_all
+
+=head1 DESCRIPTION
+
+This script C<use>s L<DBIx::Cookbook::RDBO> which makes use of
+C<MooseX::App::Cmd> to provide a modular command-line interface to a
+number of shell scripts.
+
+It leverages L<DBIx::Cookbook::DBH>.
+
+=cut
