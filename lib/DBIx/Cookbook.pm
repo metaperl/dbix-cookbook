@@ -132,11 +132,34 @@ This time we copy F<lib/DBIx/Cookbook/DBIC/Command/fetch_all.pm> to
 F<lib/DBIx/Cookbook/DBIC/Command/fetch_all.pm> and modify it to load in
 the Rose::DB::Object schema and fetch the results of the table.
 
+=head2 DBIx::Skinny
+
+A similar set of steps was followed for L<DBIx::Skinny>. I had some
+problems getting it L<setup|http://groups.google.com/group/dbix-skinny/topics?start=>
+
+but the Skinny crew was very helpful both via the google group and IRC
+channel (as was Siracusa for RDBO).
+
 
 
 =head1 AUTHOR
 
 Terrence Brannon, C<< <metaperl at gmail.com> >>
+
+=head2 Acknowledgements
+
+=head3 DBIx::Skinny
+
+Yoshimi Keiji, Atsushi Kobayashi, Ryo Mikake
+
+=head3 Rose::DB::Object 
+
+John Siracusa, 
+
+=head3 #perl-help
+
+Dylan Hardison
+
 
 
 =head1 SUPPORT

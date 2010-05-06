@@ -17,9 +17,13 @@ Sample Usage:
 
 =head2 DBIx::Class
 
-[% INCLUDE DBIC/Command/fetch_all.pm | pod_code %]
+[% INCLUDE DBIC/Command/fetch_all.pm | indent %]
 
 =head2 Rose::DB::Object
 
-[% INCLUDE RDBO/Command/fetch_all.pm | pod_code %]
+[% INCLUDE RDBO/Command/fetch_all.pm | indent %]
+
+=head2 DBIx::Skinny
+
+[% INCLUDE Skinny/Command/fetch_all.pm | indent %]
 
