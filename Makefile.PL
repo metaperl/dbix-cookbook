@@ -21,9 +21,9 @@ pod:
 	perl etc/build_pod.pl
 
 github:
-	git commit -a -m "make release `pwd`"; git push
+	git commit -a -m "make release `date`"; git push
 
-release: manifest pod github tardist
+release: clean manifest pod github tardist
 	echo "ready for release"
 EOPOST
 
