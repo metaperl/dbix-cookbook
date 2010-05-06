@@ -31,7 +31,7 @@ want to contribute more code, see L</CONTRIBUTING>.
 =head1 RECIPES
 
 The recipes section gives you a good overview of each
-ORMs capabilities with fully-working code that you can actually run!
+ORM's capabilities with fully-working code that you can actually run!
 
 =head2 Searching
 
