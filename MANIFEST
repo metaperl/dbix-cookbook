@@ -162,7 +162,6 @@ schema/lib/DBIC/Sakila/Result/SalesByStore.pm
 schema/lib/DBIC/Sakila/Result/Staff.pm
 schema/lib/DBIC/Sakila/Result/StaffList.pm
 schema/lib/DBIC/Sakila/Result/Store.pm
-scripts/.#skinny_loader
 scripts/dbic-play.pl
 scripts/dbic_cmd
 scripts/dbic_loader

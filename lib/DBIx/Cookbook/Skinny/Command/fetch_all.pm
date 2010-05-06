@@ -26,4 +26,4 @@ sub execute {
 1;
 
 # Another way to get all rows:
-# my $result = Sakila::Actor::Manager->get_actor;
+# my @rows = Sakila->search...

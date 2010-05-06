@@ -20,7 +20,10 @@ postamble <<EOPOST;
 pod:
 	perl etc/build_pod.pl
 
-release: manifest pod tardist
+github:
+	git commit -a -m "make release `pwd`"; git push
+
+release: manifest pod github tardist
 	echo "ready for release"
 EOPOST
 
