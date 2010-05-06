@@ -10,9 +10,12 @@ BEGIN {
 }
 
 # use DBIx::Skinny::Schema setup => 
-use Sakila::Schema setup => 
+my %setup = $config->for_skinny_setup;
+use Data::Dumper;
+warn 'setup: ', Dumper(\%setup);
+use DBIx::Skinny setup => 
   {
-   $config->for_dbi
+   %setup
   };
 
 
