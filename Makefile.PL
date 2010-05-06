@@ -21,7 +21,7 @@ pod:
 	perl etc/build_pod.pl
 
 github:
-	git commit -a -m "make release `date`"; git push
+	git commit -a -m "'make release' `date`"; git push
 
 notar:
 	mv -f *.tar.gz /tmp

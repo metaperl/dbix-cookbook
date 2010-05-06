@@ -53,7 +53,7 @@ are quite clear. Be sure to retain the MySQL login information because you
 will need it for the next step.
 
 
-=head2 Download and configure DBIx::Cookbook
+=head2 Download DBIx::Cookbook from github and Configure
 
    git clone http://github.com/metaperl/dbix-cookbook.git
 
@@ -83,10 +83,19 @@ C<password> attributes of the class:
     
     has '+attr' => (default => sub { { RaiseError => 1 } } );
 
+=head3 CPAN download?
+
+If you downloaded and installed L<DBIx::Cookbook> from CPAN, then you will 
+need to edit the database connection file which is
+F</usr/local/share/perl/5.10.0/DBIx/Cookbook/DBH.pm>
+on a standard Perl 5.10 install.
+
+Suggestions are welcome on how to make the install/usage process more
+seamless for git and CPAN usage.
 
 =head2 Run the Cookbook examples
 
-For DBIx::Class, you would execute F<scripts/dbic_cmd>:
+For L<DBIx::Class>, you would execute F<scripts/dbic_cmd>:
 
   dbic_cmd complex_where
   dbic_cmd paged
@@ -154,12 +163,16 @@ Yoshimi Keiji, Atsushi Kobayashi, Ryo Mikake
 
 =head3 Rose::DB::Object 
 
-John Siracusa, 
+John Siracusa,
 
 =head3 #perl-help
 
 Dylan Hardison
 
+=head3 Pod::Server
+
+Writing all the docs for this would have been much harder to review and
+debug without John Beppu's L<Pod::Server.>
 
 
 =head1 SUPPORT
