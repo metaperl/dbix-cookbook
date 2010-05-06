@@ -90,8 +90,8 @@ need to edit the database connection file which is
 F</usr/local/share/perl/5.10.0/DBIx/Cookbook/DBH.pm>
 on a standard Perl 5.10 install.
 
-Suggestions are welcome on how to make the install/usage process more
-seamless for git and CPAN usage.
+Suggestions are welcome on how to make the install/usage process
+seamless across git and CPAN usage.
 
 =head2 Run the Cookbook examples
 
