@@ -25,6 +25,7 @@ sub filter_pod_code {
 
 sub wanted {
 
+  return if /blib/ ;
   return unless /[.]tt$/ ;
 
   use Template;
@@ -46,7 +47,7 @@ sub wanted {
 
   my $vars = {};
   my $opts = {} ;
-  warn "$tt->process($File::Find::name, $vars, $output_file, $opts);";
+  warn "tt->process($File::Find::name, vars, $output_file, opts)";
   $tt->process($File::Find::name, $vars, $output_file, $opts) or
      do {
         my $error = $tt->error();

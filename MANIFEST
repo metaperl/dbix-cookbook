@@ -1,5 +1,6 @@
 Changes
 config.bashrc
+DBIx-Cookbook-0.01.tar.gz
 etc/build_pod.pl
 etc/run_pod_server
 ignore.txt
@@ -127,6 +128,10 @@ lib/DBIx/Cookbook/RecipeTT/Searching/sql_lhs.tt
 lib/DBIx/Cookbook/RecipeTT/Searching/subquery.tt
 lib/DBIx/Cookbook/RecipeTT/Searching/subquery_correlated.tt
 lib/DBIx/Cookbook/Simple.pm
+lib/DBIx/Cookbook/Skinny.pm
+lib/DBIx/Cookbook/Skinny/Command/fetch_all.pm
+lib/DBIx/Cookbook/Skinny/Sakila.pm
+lib/DBIx/Cookbook/Skinny/Sakila/Schema.pm
 Makefile.PL
 MANIFEST
 META.yml
@@ -165,6 +170,7 @@ scripts/play2.pl
 scripts/rdbo_cmd
 scripts/rdbo_loader
 scripts/rdbo_test_rosedb.pl
+scripts/skinny_cmd
 scripts/skinny_loader
 t/00-load.t
 t/boilerplate.t
