@@ -27,18 +27,16 @@ DBIx::Cookbook::DBH -- base class holding connection data and dbh() method
 
 =head1 SYNOPSIS
 
-Get connection data from class:
+DBIx::Cookbook::DBH is simply a derived class of L<DBIx::DBH>. Instances of 
+L<DBIx::Cookbook::DBH> supply database connection info in forms consumable
+by DBI(-based ORMs?, including
 
-  my $c = DBIx::Cookbook::DBH::connect_data;
+=over 4
 
-C<$c> will be:
+=item * DBI
+=item * DBIx::Class
+=item * DBIx::Skinny
+=item * Rose::DB::Object
 
-  {
-   dsn => "dbi:mysql:database=sakila;host=localhost;port=3306",
-   user => 'shootout',
-   pass => 'shootout1'
-  };
+=back
 
-Get a L<DBI> database handle:
-
-  my $dbh = DBIx::Cookbook::DBH::dbh;

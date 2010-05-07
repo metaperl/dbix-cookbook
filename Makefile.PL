@@ -15,12 +15,12 @@ requires 'DBIx::DBH';
 requires 'File::Slurp';
 requires 'MooseX::App::Cmd';
 
-
-
-
 auto_install;
 
 postamble <<EOPOST;
+sakila:
+	./etc/install_sakila.pl
+
 pod:
 	perl etc/build_pod.pl
 
