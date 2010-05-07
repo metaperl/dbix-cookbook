@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+use FindBin qw($Bin);
+use lib "$Bin/../lib";
+use lib "$Bin/../lib/DBIx/Cookbook/Skinny";
 
 use DBIx::Cookbook::Skinny;
 my $app = DBIx::Cookbook::Skinny;

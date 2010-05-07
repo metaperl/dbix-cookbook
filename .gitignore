@@ -1,3 +1,4 @@
+tmp/*
 schema/lib/*
 blib*
 Makefile

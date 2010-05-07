@@ -168,6 +168,12 @@ John Siracusa,
 =head3 #perl-help
 
 Possum (Daniel LeWarne) - massive help on the F<etc/install-sakila.pl> script!
+Matthew Trout:
+
+   [10:24] <mst> metaperl: I tend to use ExtUtils::MakeMaker::prompt for simple stuff
+   [10:24] <mst> metaperl: see Devel::REPL for using Term::ReadLine for more complex things
+   [10:35] <metaperl> Before releasing DBIx::Cookboox ( http://github.com/metaperl/dbix-cookbook ) to CPAN, how to eliminate the need for config.bashrc (http://github.com/metaperl/dbix-cookbook/blob/master/config.bashrc ) which is being used through various .pm files via use lib "$ENV{DBIX_COOK}/etc/etc/"
+   [10:37] <mst> er. why not use FindBin?
 
 =head3 Pod::Server
 

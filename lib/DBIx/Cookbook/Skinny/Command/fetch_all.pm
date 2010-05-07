@@ -19,7 +19,7 @@ sub execute {
 
   while (my $row = $result->next) {
     use Data::Dumper;
-    warn Dumper($row);
+    warn Dumper($row->{row_data});
   }
 }
 

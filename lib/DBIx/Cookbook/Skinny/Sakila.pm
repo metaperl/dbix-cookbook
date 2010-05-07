@@ -6,10 +6,10 @@ BEGIN {
   require DBIx::Cookbook::DBH;
 
   my $config = DBIx::Cookbook::DBH->new;
-  my %setup = $config->for_skinny_setup;
+  my %setup  = $config->for_skinny;
 
-  use Data::Dumper;
-  warn 'setup: ', Dumper(\%setup);
+  #use Data::Dumper;
+  #warn 'setup: ', Dumper(\%setup);
 
   require DBIx::Skinny;
 
