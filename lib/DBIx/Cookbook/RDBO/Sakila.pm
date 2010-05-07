@@ -12,3 +12,5 @@ use Rose::DB::Object::Helpers qw(as_tree);
 1;
 
 
+=head1 NAME
+

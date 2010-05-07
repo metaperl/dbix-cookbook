@@ -9,10 +9,14 @@ author_tests('xt');
 
 build_requires 'Test::More';
 
-requires 'DBI';
-requires 'MooseX::App::Cmd';
-requires 'DBIx::DBH';
 requires 'autodie';
+requires 'DBI';
+requires 'DBIx::DBH';
+requires 'File::Slurp';
+requires 'MooseX::App::Cmd';
+
+
+
 
 auto_install;
 

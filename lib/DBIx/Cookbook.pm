@@ -167,7 +167,7 @@ John Siracusa,
 
 =head3 #perl-help
 
-Dylan Hardison
+Possum (Daniel LeWarne) - massive help on the F<etc/install-sakila.pl> script!
 
 =head3 Pod::Server
 
