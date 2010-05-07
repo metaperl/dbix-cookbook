@@ -3,16 +3,16 @@ package DBIx::Cookbook::DBH;
 use Moose;
 extends 'DBIx::DBH';
 
-has '+username' => ( default => 'shootout' );
-has '+password' => ( default => 'shootout1' );
+has '+username' => ( default => '[% username %]' );
+has '+password' => ( default => '[% password %]' );
 
 has '+dsn' => (
     default => sub {
         {
             driver   => 'mysql',
             database => 'sakila',
-            host     => 'localhost',
-            port     => '3306,
+            host     => '[% host %]',
+            port     => '[% port %],
         };
     }
 );

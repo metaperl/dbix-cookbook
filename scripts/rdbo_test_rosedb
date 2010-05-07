@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+use DBIx::Cookbook::RDBO::RoseDB;
+
+use strict;
+use warnings;
+
+my $rosedb = DBIx::Cookbook::RDBO::RoseDB->new;
+
+warn $rosedb->username;
+
+warn $rosedb->dbh;
+
+
+=head1 NAME
+
+rdbo_test_rosedb - a script to test Rose::DB
+
+=head1 SYNOPSIS
+
+  ./scripts/rdbo_test_rosedb.pl
+
+=head1 DESCRIPTION

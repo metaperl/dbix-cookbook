@@ -14,6 +14,7 @@ requires 'DBI';
 requires 'DBIx::DBH';
 requires 'File::Slurp';
 requires 'MooseX::App::Cmd';
+requires 'Template';
 
 auto_install;
 

@@ -7,7 +7,13 @@ use autodie;
 
 use ExtUtils::MakeMaker;
 use File::Slurp;
+use FindBin qw($Bin);
 use LWP::Simple;
+use Template;
+
+my $dbh_dir = "$Bin/../lib/DBIx/Cookbook";
+my $dbh_tt  = "$dbh_dir/DBH.tt";
+my $dbh_pm  = "$dbh_dir/DBH.pm";
 
 chdir 'tmp';
 
@@ -37,3 +43,25 @@ for my $sql qw(sakila-schema.sql sakila-data.sql) {
 
   print $fh $contents;
 }
+
+# Now write out connection info
+
+my %conn = (
+	    username => $username,
+	    password => $password,
+	    host => $host,
+	    port => $port
+	   );
+
+  my $tt = Template->new({ABSOLUTE=>1}) or die Template->error;
+
+  my $vars = \%conn;
+  my $opts = {} ;
+
+  $tt->process($dbh_tt, $vars, $dbh_pm, $opts) or
+     do {
+        my $error = $tt->error();
+        print "error type: ", $error->type(), "\n";
+        print "error info: ", $error->info(), "\n";
+        print $error, "\n";
+    };
