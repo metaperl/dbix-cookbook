@@ -32,11 +32,12 @@ connection info. When C<make sakila> is run during package
 installation, the F<.tt> file is turned into the F<.pm> file via the
 L<install sakila
 script|http://github.com/metaperl/dbix-cookbook/blob/master/etc/install_sakila.pl> 
+
+
 =head2 Recipe directories
 
 F<RecipeTT> and F<Recipe> are the directories for templates and
 generated pod for the recipes. 
-
 
 =head1 That's all folks
 
