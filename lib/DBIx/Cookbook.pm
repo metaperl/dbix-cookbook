@@ -30,13 +30,18 @@ want to contribute more code, see L</CONTRIBUTING>.
 
 =head2 Schema
 
+=for html <img src=http://dev.mysql.com/doc/sakila/en/images/sakila-schema.png>
+
 To get a feel for the Sakila database, refer to the 
 L<structure
 section|http://dev.mysql.com/doc/sakila/en/sakila.html#sakila-structure>
-of their website. This section has a graphical database schema which
-is fairly useful when any complex joins are done in any of the
-examples.
+of the MySQL Sakila website. This section has a graphical database
+schema which is fairly useful when any complex joins are done in any
+of the examples.
 
+Another option is to look at the DBIx::Class Result classes, since
+they have good pod documentation. Starting with 
+L<DBIx::Cookbook::DBIC::Sakila::Result::Actor> is a good idea.
 
 =head1 RECIPES
 

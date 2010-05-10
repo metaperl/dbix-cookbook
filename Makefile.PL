@@ -5,8 +5,6 @@ all_from 'lib/DBIx/Cookbook.pm';
 author   q{Terrence Brannon <metaperl@gmail.com>};
 license  'perl';
 
-author_tests('xt');
-
 build_requires 'Test::More';
 
 requires 'autodie';
