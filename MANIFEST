@@ -7,6 +7,7 @@ etc/run_pod_server
 ignore.txt
 lib/DBIx/Cookbook.pm
 lib/DBIx/Cookbook/DBH.pm
+lib/DBIx/Cookbook/DBH.pod
 lib/DBIx/Cookbook/DBH.tt
 lib/DBIx/Cookbook/DBIC.pm
 lib/DBIx/Cookbook/DBIC/Command/complex_where.pm
@@ -123,7 +124,6 @@ lib/DBIx/Cookbook/Skinny.pm
 lib/DBIx/Cookbook/Skinny/Command/fetch_all.pm
 lib/DBIx/Cookbook/Skinny/Sakila.pm
 lib/DBIx/Cookbook/Skinny/Sakila/Schema.pm
-Makefile
 Makefile.old
 Makefile.PL
 MANIFEST

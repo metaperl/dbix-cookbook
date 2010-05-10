@@ -3,7 +3,7 @@ package DBIx::Cookbook;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 NAME
@@ -27,6 +27,16 @@ for the same task.
 If you only want to read the code samples, then simply see L</RECIPES>. If you
 want to run them on actual data, the see L</INSTALLATION>. And for those that
 want to contribute more code, see L</CONTRIBUTING>.
+
+=head2 Schema
+
+To get a feel for the Sakila database, refer to the 
+L<structure
+section|http://dev.mysql.com/doc/sakila/en/sakila.html#sakila-structure>
+of their website. This section has a graphical database schema which
+is fairly useful when any complex joins are done in any of the
+examples.
+
 
 =head1 RECIPES
 
