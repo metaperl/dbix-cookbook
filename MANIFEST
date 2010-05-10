@@ -124,15 +124,12 @@ lib/DBIx/Cookbook/Skinny.pm
 lib/DBIx/Cookbook/Skinny/Command/fetch_all.pm
 lib/DBIx/Cookbook/Skinny/Sakila.pm
 lib/DBIx/Cookbook/Skinny/Sakila/Schema.pm
-Makefile.old
 Makefile.PL
 MANIFEST
 MANIFEST.bak
 MANIFEST.SKIP
 META.yml
 README
-schema/diagrams/schema.architect
-schema/diagrams/schema.pdf
 schema/lib/DBIC/Sakila.pm
 schema/lib/DBIC/Sakila/Result/Actor.pm
 schema/lib/DBIC/Sakila/Result/ActorInfo.pm
