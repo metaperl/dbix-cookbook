@@ -33,10 +33,7 @@ pod:
 github:
 	git commit -a -m "'make release' `date`"; git push
 
-notar:
-	mv -f *.tar.gz /tmp
-
-release: clean notar manifest pod github tardist
+release: clean manifest pod github tardist
 	echo "ready for release"
 EOPOST
 

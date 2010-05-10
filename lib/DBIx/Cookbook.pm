@@ -50,7 +50,18 @@ Installation of L<DBIx::Cookbook> is simple
  make
  make install
 
-=head2 Run the Cookbook examples
+=head2 The sakila database is installed automatically
+
+Just FYI, there is a C<sakila> target that runs automatically when you
+run C<make>. This target downloads the sakila database and loads it
+into MySQL. It also stores the MySQL auth credentials in
+F<lib/DBI/Cookbook/DBH.pm>. 
+
+If you ever want to run it separately simply type
+
+  make sakila
+
+=head2 Run the examples
 
 For L<DBIx::Class>, you would execute F<scripts/dbic_cmd>:
 
@@ -97,6 +108,13 @@ into L<DBIx::Cookbook>.
 
 Let's see how I added L<Rose::DB::Object> to the Cookbook.
 
+=head3 Make the ORM-database connection
+
+The file
+L<lib/DBIx/Cookbook/RDBO/RoseDB.pm|http://github.com/metaperl/dbix-cookbook/blob/master/lib/DBIx/Cookbook/RDBO/RoseDB.pm>
+was used to form a connection to the database to Rose::DB::Object via
+the L<Rose::DB> protocol.
+
 =head3 Create a command class
 
 L<DBIx::Cookbook> uses L<MooseX::App::Cmd> to separate the mechanics
@@ -132,6 +150,11 @@ problems getting it L<setup|http://groups.google.com/group/dbix-skinny/topics?st
 
 but the Skinny crew was very helpful both via the google group and IRC
 channel (as was Siracusa for RDBO).
+
+The hardest part was again making the ORM-database connection.
+The file
+L<lib/DBIx/Cookbook/Skinny/Sakila.pm|http://github.com/metaperl/dbix-cookbook/blob/master/lib/DBIx/Cookbook/Skinny/Sakila.pm>
+is how the connection was made.
 
 =head1 AUTHOR
 
