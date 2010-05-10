@@ -12,7 +12,7 @@ has '+dsn' => (
             driver   => 'mysql',
             database => 'sakila',
             host     => 'localhost',
-            port     => '3306,
+            port     =>  3306,
         };
     }
 );

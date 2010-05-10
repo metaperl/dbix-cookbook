@@ -43,55 +43,12 @@ show you common search tasks.
 
 =head1 INSTALLATION
 
-=head2 Install the Sakila database into MySQL
+Installation of L<DBIx::Cookbook> is simple 
+(thanks to #perl-help on irc.perl.org):
 
-The MySQL installation instructions:
-
-L<http://dev.mysql.com/doc/sakila/en/sakila.html#sakila-installation>
-
-are quite clear. Be sure to retain the MySQL login information because you
-will need it for the next step.
-
-
-=head2 Download DBIx::Cookbook from github and Configure
-
-   git clone http://github.com/metaperl/dbix-cookbook.git
-
-=head3 Configure DBIx::Cookbook::DBH
-
-Edit F<lib/DBIx/Cookbook/DBH.pm>, setting the C<dsn>, C<username>, and
-C<password> attributes of the class:
-
-    package DBIx::Cookbook::DBH;
-    
-    use Moose;
-    extends 'DBIx::DBH';
-    
-    has '+username' => (default => 'shootout');
-    has '+password' => (default => 'shootout1');
-    
-    has '+dsn' => (
-        default => sub {
-            {
-                driver => 'mysql',
-                database => 'sakila',
-                host   => 'localhost',
-                port   => 3306,
-            };
-        }
-    );
-    
-    has '+attr' => (default => sub { { RaiseError => 1 } } );
-
-=head3 CPAN download?
-
-If you downloaded and installed L<DBIx::Cookbook> from CPAN, then you will 
-need to edit the database connection file which is
-F</usr/local/share/perl/5.10.0/DBIx/Cookbook/DBH.pm>
-on a standard Perl 5.10 install.
-
-Suggestions are welcome on how to make the install/usage process
-seamless across git and CPAN usage.
+ perl Makefile.pl
+ make
+ make install
 
 =head2 Run the Cookbook examples
 
@@ -101,7 +58,34 @@ For L<DBIx::Class>, you would execute F<scripts/dbic_cmd>:
   dbic_cmd paged
   dbic_cmd subquery
 
-etc.
+Invoke F<dbic_cmd> without arguments to see all possible queries
+to run:
+
+  metaperl@locohost:~/prg/DBIx-Cookbook$ ./scripts/dbic_cmd 
+  Available commands:
+
+             commands: list the application's commands
+                 help: display a command's help screen
+
+        complex_where: (unknown)
+           custom_sql: (unknown)
+              db_func: (unknown)
+       distinct_count: (unknown)
+            fetch_all: (unknown)
+          fetch_first: (unknown)
+         fetch_single: (unknown)
+           get_column: (unknown)
+             grouping: (unknown)
+                paged: (unknown)
+    predefined_search: (unknown)
+     specific_columns: (unknown)
+              sql_lhs: (unknown)
+          stored_proc: (unknown)
+             subquery: (unknown)
+  subquery_correlated: (unknown)
+
+F<skinny_cmd> and F<rdbo_cmd> currently implement C<fetch_all> but no other
+examples.
 
 =head1 CONTRIBUTING (another ORM)
 
@@ -149,8 +133,6 @@ problems getting it L<setup|http://groups.google.com/group/dbix-skinny/topics?st
 but the Skinny crew was very helpful both via the google group and IRC
 channel (as was Siracusa for RDBO).
 
-
-
 =head1 AUTHOR
 
 Terrence Brannon, C<< <metaperl at gmail.com> >>
@@ -163,16 +145,21 @@ Yoshimi Keiji, Atsushi Kobayashi, Ryo Mikake
 
 =head3 Rose::DB::Object 
 
-John Siracusa,
+John Siracusa
 
 =head3 #perl-help
 
 Possum (Daniel LeWarne) - massive help on the F<etc/install-sakila.pl> script!
+
 Matthew Trout:
 
-   [10:24] <mst> metaperl: I tend to use ExtUtils::MakeMaker::prompt for simple stuff
-   [10:24] <mst> metaperl: see Devel::REPL for using Term::ReadLine for more complex things
-   [10:35] <metaperl> Before releasing DBIx::Cookboox ( http://github.com/metaperl/dbix-cookbook ) to CPAN, how to eliminate the need for config.bashrc (http://github.com/metaperl/dbix-cookbook/blob/master/config.bashrc ) which is being used through various .pm files via use lib "$ENV{DBIX_COOK}/etc/etc/"
+   [10:24] <mst> metaperl: I tend to use ExtUtils::MakeMaker::prompt
+   for simple stuff 
+   [10:24] <mst> metaperl: see Devel::REPL for using Term::ReadLine
+   for more complex things 
+   [10:35] <metaperl> Before releasing DBIx::Cookboox to CPAN, how to
+   eliminate the need for config.bashrcwhich is being used through
+   various .pm files via use lib "$ENV{DBIX_COOK}/etc/etc/" 
    [10:37] <mst> er. why not use FindBin?
 
 =head3 Pod::Server
@@ -180,8 +167,7 @@ Matthew Trout:
 Writing all the docs for this would have been much harder to review and
 debug without John Beppu's L<Pod::Server.>
 
-
-=head1 SUPPORT
+=head1 Support, source code, etc 
 
 irc://irc.perl.org/#dbix-class - I can be found as 'metaperl' here
 
@@ -189,36 +175,14 @@ You can find documentation for this module with the perldoc command.
 
     perldoc DBIx::Cookbook
 
+=head2 Source Code Repo
 
-You can also look for information at:
-
-=over 4
-
-=item * RT: CPAN's request tracker / bug report system
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=DBIx-Cookbook>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/DBIx-Cookbook>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/DBIx-Cookbook>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/DBIx-Cookbook/>
-
-=back
-
-
-=head1 ACKNOWLEDGEMENTS
+   git clone http://github.com/metaperl/dbix-cookbook.git
 
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2010 Terrence Brannon.
+Copyright Terrence Brannon.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published

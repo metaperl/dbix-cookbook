@@ -10,15 +10,20 @@ author_tests('xt');
 build_requires 'Test::More';
 
 requires 'autodie';
+requires 'App::Cmd';
 requires 'DBI';
 requires 'DBIx::DBH';
 requires 'File::Slurp';
+requires 'Moose';
 requires 'MooseX::App::Cmd';
 requires 'Template';
 
 auto_install;
 
 postamble <<EOPOST;
+
+all :: sakila pod
+
 sakila:
 	./etc/install_sakila.pl
 

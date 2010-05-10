@@ -1,7 +1,7 @@
 Changes
 config.bashrc
-DBIx-Cookbook-0.01.tar.gz
 etc/build_pod.pl
+etc/install_sakila.pl
 etc/run_pod_server
 ignore.txt
 inc/Module/AutoInstall.pm
@@ -17,6 +17,7 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/DBIx/Cookbook.pm
 lib/DBIx/Cookbook/DBH.pm
+lib/DBIx/Cookbook/DBH.tt
 lib/DBIx/Cookbook/DBIC.pm
 lib/DBIx/Cookbook/DBIC/Command/complex_where.pm
 lib/DBIx/Cookbook/DBIC/Command/custom_sql.pm
@@ -63,7 +64,6 @@ lib/DBIx/Cookbook/DBIC/Sakila/Result/Store.pm
 lib/DBIx/Cookbook/DBIC/Sakila/ResultSet/Country.pm
 lib/DBIx/Cookbook/DBIC/Sakila/ResultSet/Rental.pm
 lib/DBIx/Cookbook/RDBO.pm
-lib/DBIx/Cookbook/RDBO/.#Sakila.pm
 lib/DBIx/Cookbook/RDBO/Command/fetch_all.pm
 lib/DBIx/Cookbook/RDBO/RoseDB.pm
 lib/DBIx/Cookbook/RDBO/Sakila.pm
@@ -100,6 +100,7 @@ lib/DBIx/Cookbook/RDBO/Sakila/Staff.pm
 lib/DBIx/Cookbook/RDBO/Sakila/Staff/Manager.pm
 lib/DBIx/Cookbook/RDBO/Sakila/Store.pm
 lib/DBIx/Cookbook/RDBO/Sakila/Store/Manager.pm
+lib/DBIx/Cookbook/README.pod
 lib/DBIx/Cookbook/Recipe/Searching.pod
 lib/DBIx/Cookbook/Recipe/Searching/complex_where.pod
 lib/DBIx/Cookbook/Recipe/Searching/db_func.pod
@@ -162,13 +163,11 @@ schema/lib/DBIC/Sakila/Result/SalesByStore.pm
 schema/lib/DBIC/Sakila/Result/Staff.pm
 schema/lib/DBIC/Sakila/Result/StaffList.pm
 schema/lib/DBIC/Sakila/Result/Store.pm
-scripts/dbic-play.pl
 scripts/dbic_cmd
 scripts/dbic_loader
-scripts/play2.pl
 scripts/rdbo_cmd
 scripts/rdbo_loader
-scripts/rdbo_test_rosedb.pl
+scripts/rdbo_test_rosedb
 scripts/skinny_cmd
 scripts/skinny_loader
 t/00-load.t
