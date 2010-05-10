@@ -3,7 +3,7 @@ package DBIx::Cookbook;
 use warnings;
 use strict;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 =head1 NAME
@@ -199,6 +199,14 @@ Matthew Trout:
 
 Writing all the docs for this would have been much harder to review and
 debug without John Beppu's L<Pod::Server.>
+
+=head3 perlmonks
+
+bingos helped out quite a bit with L<Module::Install> in
+L<this thread|http://perlmonks.org/?node_id=834658>
+and
+L<this thread|http://perlmonks.org/?node_id=838941>
+
 
 =head1 Support, source code, etc 
 
