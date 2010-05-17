@@ -129,6 +129,8 @@ MANIFEST.bak
 MANIFEST.SKIP
 META.yml
 README
+scripts/#rdbo_cmd#
+scripts/.#rdbo_cmd
 scripts/dbic_cmd
 scripts/dbic_loader
 scripts/rdbo_cmd

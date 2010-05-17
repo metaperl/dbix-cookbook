@@ -27,6 +27,8 @@ system("wget --verbose --continue $url");
 system("unzip $zip");
 
 print "We need credentials for logging into MySQL and installing Sakila\n";
+print "** In fact, the MySQL instance must be up and running right now. **\n";
+print "** If it is not, then you can always type 'make sakila' later.   **\n";
 my $username = prompt('username');
 my $password = prompt('password');
 my $host = prompt(host => 'localhost');
@@ -35,10 +37,14 @@ my $port = prompt(port => 3306);
 my @opt = ("--user=$username", "--password=$password",
 	   "--host=$host", "--port=$port");
 
+print "Starting installation of .sql files\n";
+
 for my $sql qw(sakila-schema.sql sakila-data.sql) {
   my $file = "sakila-db/$sql";
   my $contents = read_file($file); 
-  
+
+  print "\t$file\n";
+
   open my $fh, '|-', 'mysql', @opt;
 
   print $fh $contents;

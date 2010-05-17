@@ -3,7 +3,7 @@ package DBIx::Cookbook;
 use warnings;
 use strict;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 
 =head1 NAME
@@ -211,6 +211,11 @@ bingos helped out quite a bit with L<Module::Install> in
 L<this thread|http://perlmonks.org/?node_id=834658>
 and
 L<this thread|http://perlmonks.org/?node_id=838941>
+
+=head3 The DBI crowd
+
+Jonathan Leffler detected many issues with my general CPAN release architecting, such as
+hardcoded paths, missing directories, etc.
 
 
 =head1 Support, source code, etc 
