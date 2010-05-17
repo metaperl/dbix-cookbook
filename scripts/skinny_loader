@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use DBIx::Skinny::Schema::Loader qw/ make_schema_at /;
 use DBIx::Cookbook::DBH;

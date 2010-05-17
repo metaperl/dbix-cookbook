@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use DBIx::Class::Schema::Loader qw/ make_schema_at /;
 
