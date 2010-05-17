@@ -11,4 +11,4 @@ cover_db
 pod2htm*.tmp
 DBIx-Cookbook-*
 *.zip
-tmp*
+

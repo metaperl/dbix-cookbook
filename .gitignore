@@ -1,4 +1,4 @@
-tmp/*
+tmp/sakila*
 schema/lib/*
 blib*
 Makefile
