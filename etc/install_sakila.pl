@@ -11,9 +11,6 @@ use FindBin qw($Bin);
 use LWP::Simple;
 use Template;
 
-my $dbh_dir = "$Bin/../lib/DBIx/Cookbook";
-my $dbh_tt  = "$dbh_dir/DBH.tt";
-my $dbh_pm  = "$dbh_dir/DBH.pm";
 
 chdir 'tmp';
 
@@ -51,6 +48,11 @@ for my $sql qw(sakila-schema.sql sakila-data.sql) {
 }
 
 # Now write out connection info
+
+my $dbh_dir = "$Bin/../lib/DBIx/Cookbook";
+my $dbh_tt  = "$dbh_dir/DBH.tt";
+my $dbh_pm  = "$dbh_dir/DBH.pm";
+
 
 my %conn = (
 	    username => $username,
