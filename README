@@ -1,7 +1,7 @@
 DBIx-Cookbook is an executable cookbook of code for Perl ORMs.
 
 It is based on the [Sakila database
-schema](http://dev.mysql.com/doc/sakila/en/sakila.html>). Currently,
+schema](http://dev.mysql.com/doc/sakila/en/sakila.html). Currently,
 the majority of code is for
 [DBIx::Class](http://search.cpan.org/dist/DBIx-Class) 
 but all ORMs are encouraged to contribute code so that comparisons can
