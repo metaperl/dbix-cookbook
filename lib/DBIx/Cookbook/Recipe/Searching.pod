@@ -38,7 +38,7 @@ L<DBIx::Cookbook::Recipe::Searching::paged>
 
 L<DBIx::Cookbook::Recipe::Searching::predefined_search>
 
-=head2 specifying which columns to retrieve from a search
+=head2 Specifying which columns to retrieve from a search
 
 L<DBIx::Cookbook::Recipe::Searching::specific_columns>
 
