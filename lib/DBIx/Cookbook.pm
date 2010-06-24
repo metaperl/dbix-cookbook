@@ -3,7 +3,7 @@ package DBIx::Cookbook;
 use warnings;
 use strict;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 =head1 NAME
@@ -229,6 +229,12 @@ You can find documentation for this module with the perldoc command.
 =head2 Source Code Repo
 
    git clone http://github.com/metaperl/dbix-cookbook.git
+
+
+=head2 Known bug in search.cpan.org
+
+On L<perlmonks|http://perlmonks.org/?node_id=845958> I've reported an issue
+where search.cpan.org renders some links using .tt files instead of .pod files.
 
 
 =head1 LICENSE AND COPYRIGHT
