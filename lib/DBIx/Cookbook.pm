@@ -3,7 +3,7 @@ package DBIx::Cookbook;
 use warnings;
 use strict;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 
 =head1 NAME
@@ -176,6 +176,10 @@ is how the connection was made.
 Terrence Brannon, C<< <metaperl at gmail.com> >>
 
 =head2 Acknowledgements
+
+=head3 DBIx::Class
+
+Many thanks to ribasushi for help with L<Module::Install> and my F<MANIFEST.SKIP>
 
 =head3 DBIx::Skinny
 

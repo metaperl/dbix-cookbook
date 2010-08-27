@@ -12,6 +12,7 @@ requires 'App::Cmd';
 requires 'DBI';
 requires 'DBIx::DBH' => '0.04';
 requires 'File::Slurp';
+requires 'Module::Install';
 requires 'Moose';
 requires 'MooseX::App::Cmd';
 requires 'Template';
@@ -33,6 +34,7 @@ github:
 
 release: clean manifest pod github tardist
 	echo "ready for release"
+
 EOPOST
 
 
