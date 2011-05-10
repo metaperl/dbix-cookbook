@@ -2,6 +2,8 @@
 
 inc[/].+[.]pm
 
+RecipeTT
+
 # [09:48] <@ribasushi> metaperl: steal the MANIFEST.SKIP from DBIC, alter to your taste
 
 # Avoid version control files.
