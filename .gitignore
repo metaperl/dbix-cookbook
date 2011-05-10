@@ -1,18 +1,18 @@
-inc/*
-tmp/sakila*
-schema/lib/*
-blib*
-Makefile
-Makefile.old
-Build
-_build*
-pm_to_blib*
 *.tar.gz
 .lwpcookies
+Build
 DBIx-Shootout-*
+MANIFEST.bak
+Makefile
+Makefile.old
+_build*
+blib*
 cover_db
-
+inc/*
+pm_to_blib*
 schema.sqlite3
+schema/lib/*
+tmp/sakila*
 
 # lib/DBIx/Cookbook/DBIC/Sakila/*
 
