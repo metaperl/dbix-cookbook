@@ -26,7 +26,7 @@ sub filter_pod_code {
 sub wanted {
 
   return if /blib/ ;
-  return unless /[.]tt$/ ;
+  return unless /[.]tt2?$/ ;
 
   use Template;
   use File::Basename;
