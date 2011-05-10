@@ -12,6 +12,7 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/DBIx/Cookbook.pm
 lib/DBIx/Cookbook/DBH.pm
+lib/DBIx/Cookbook/DBH.pod
 lib/DBIx/Cookbook/DBH.tt
 lib/DBIx/Cookbook/DBIC.pm
 lib/DBIx/Cookbook/DBIC/Command/complex_where.pm
