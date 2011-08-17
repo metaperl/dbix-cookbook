@@ -9,9 +9,11 @@ build_requires 'Test::More';
 
 requires 'autodie';
 requires 'App::Cmd';
+requires 'Archive::Extract';
 requires 'DBI';
 requires 'DBIx::DBH' => '0.04';
 requires 'File::Slurp';
+requires 'LWP';
 requires 'Module::Install';
 requires 'Moose';
 requires 'MooseX::App::Cmd';
@@ -24,7 +26,7 @@ postamble <<EOPOST;
 all :: sakila pod
 
 sakila:
-	./etc/install_sakila.pl
+	perl etc/install_sakila.pl
 
 pod:
 	perl etc/build_pod.pl
