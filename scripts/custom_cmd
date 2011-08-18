@@ -1,0 +1,27 @@
+#!/usr/bin/env perl
+
+use FindBin qw($Bin);
+use lib "$Bin/../lib";
+#use lib "$Bin/../lib/DBIx/Cookbook/Custom";
+
+use DBIx::Cookbook::Custom;
+DBIx::Cookbook::Custom->run;
+
+
+=head1 NAME
+
+custom_cmd - run DBIx::Custom cookbook examples
+
+=head1 SYNOPSIS
+
+  ./scripts/custom_cmd fetch_all
+
+=head1 DESCRIPTION
+
+This script makes use of 
+C<MooseX::App::Cmd> to provide a modular command-line interface to a
+number of shell scripts.
+
+It leverages L<DBIx::Cookbook::DBH>.
+
+=cut

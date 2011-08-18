@@ -119,6 +119,32 @@ It is highly desired to have code from as many ORMs as possible. In
 this section we will review the steps to install another ORM
 into L<DBIx::Cookbook>.
 
+=head2 DBIx::Custom
+
+Let's see how I added L<DBIx::Custom> to the Cookbook. It is the most recent (as of 2011-08-18) addition
+to the cookbook, so things were refined.
+
+=head3 Implement a database connection role
+
+L<DBIx::Cookbook::Custom::DBH> is a L<Moose::Role> that implements 
+a C<<connect>> method for our command classes.
+
+=head3 Write a command script
+
+F<scripts/custom_cmd> is the command-line interface based on
+L<MooseX::App::Cmd> that allows us to modularly develop
+L<DBIx::Custom> commands.
+
+=head3 Write a command
+
+L<DBIx::Cookbook::Custom::Command::fetch_all> is the command that I
+implemented after writing our command class. Now, you can add all the commmands you want
+simply by making more modules under C<< DBIx::Cookbook::Custom::Command:: >>
+
+=head3 Done
+
+Now we can write as many commands as we want.
+
 =head2 Rose::DB::Object
 
 Let's see how I added L<Rose::DB::Object> to the Cookbook.
@@ -157,6 +183,7 @@ Rose::DB::Object classes for the database schema
 This time we copy F<lib/DBIx/Cookbook/DBIC/Command/fetch_all.pm> to 
 F<lib/DBIx/Cookbook/DBIC/Command/fetch_all.pm> and modify it to load in
 the Rose::DB::Object schema and fetch the results of the table.
+
 
 =head2 DBIx::Skinny
 

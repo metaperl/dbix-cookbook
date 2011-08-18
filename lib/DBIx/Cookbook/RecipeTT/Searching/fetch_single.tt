@@ -17,5 +17,9 @@ Sample Usage:
 
 =head2 DBIx::Class
 
-[% INCLUDE DBIC/Command/fetch_single.pm | pod_code %]
+[% INCLUDE DBIC/Command/fetch_single.pm | indent %]
+
+=head2 DBIx::Class
+
+[% INCLUDE Custom/Command/fetch_single.pm | indent %]
 
