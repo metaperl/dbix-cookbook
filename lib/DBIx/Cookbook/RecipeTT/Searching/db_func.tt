@@ -19,5 +19,9 @@ Sample Usage:
 
 =head2 DBIx::Class
 
-[% INCLUDE DBIC/Command/db_func.pm | pod_code %]
+[% INCLUDE DBIC/Command/db_func.pm | indent %]
+
+=head2 DBIx::Custom
+
+[% INCLUDE Custom/Command/db_func.pm | indent %]
 

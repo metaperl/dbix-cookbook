@@ -23,5 +23,9 @@ Sample Usage:
 
 =head2 DBIx::Class
 
-[% INCLUDE DBIC/Command/complex_where.pm | pod_code %]
+[% INCLUDE DBIC/Command/complex_where.pm | indent %]
+
+=head2 DBIx::Custom
+
+[% INCLUDE Custom/Command/complex_where.pm | indent %]
 
