@@ -27,3 +27,7 @@ Sample Usage:
 
 [% INCLUDE DBIC/Command/distinct_count.pm | pod_code %]
 
+=head2 DBIx::Custom
+
+[% INCLUDE Custom/Command/distinct_count.pm | pod_code %]
+
